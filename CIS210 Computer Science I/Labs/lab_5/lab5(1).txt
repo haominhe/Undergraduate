@@ -1,0 +1,71 @@
+The Office of Strategic National Alien Planning (O-SNAP), in an effort to increase security, has purchased robots from Cyberdyne Systems. O-SNAP offices are being issued an Alien Decapitation Machine (ADM) for each floor in the facility. If a hostile alien is detected on the floor, the ADM will need to autonomously navigate from the security closet to the location of an alien invader and neutralize the threat. Licensing costs for the Cyberdyne Systems navigation AI exceeded the budget, so the ADMs have been delivered without navigation software. O-SNAP needs software that given a floor plan, starting coordinates, and target coordinates will compute a reasonably good route for an ADM.
+
+
+Files:
+adm_nav.py - skeleton code for implementation
+building1.map - a floor plan for an O-SNAP office floor
+
+
+You need to write the getRoute() recursive function. The starter code provides all the other needed functionality. getRoute() takes takes 5 arguments:
+
+map - cardinal coordinate layout of the floor as a two dimensional list.
+step - number of steps already taken
+adm_x,adm-y - the current x,y coordinates of the ADM.
+alien_x,alien_y - the x,y coordinates of the align (assume these never change)
+
+ADMs expect routes to be given in files containing sequence of cardinal directions, one per line, in which to move. ADMs do not move diagonally.
+
+The return value consists of a string formed by concatenating ’N’, ’S’, ‘W’, and ‘E’ describing the route the ADM must take to reach the alien. Each direction represents one step.
+
+O-SNAP floor plans are given as text files. The file contains the floor plan, using '#' to mark the location of a wall and '.' to mark the location of open space. ADMs can't open doors or fit through windows. The O-SNAP floor plan represents the building in the current configuration, all open doors are marked as open space and all closed doors are marked as walls. All windows are marked as walls. O-SNAP floor plans are oriented so that north is up, south is down, west is left, and east is right.
+
+The starter code takes care of reading the floor plan into the two dimensional list object map. Cardinal positions within map are accessed using readLoc() and setLoc().
+
+Functions provided that you may use within getRoute include (you shouldn’t need any helper functions besides those listed below):
+    readLoc(map,x,y) - returns the symbol corresponding to location x,y
+    setLoc(map,x,y,sym) - sets the symbol corresponding to location x,y
+    minPath(a,b,c,d) - returns the shortest path from the set of a,b,c,d
+
+
+Recursive Function Definition:
+
+
+
+
+                | None                           if x,y is WALL
+                | “”                             if x,y = alien x,y
+                | None                           if steps > already taken
+                |
+f(steps,x,y)   =|
+                | min[ ’N’ + f(steps+1, x, y-1),
+                |      ’S’ + f(steps+1, x, y+1),  if x,y is OPEN
+                |      ‘W’ + f(steps+1, x-1, y),
+                |      ‘E’ + f(steps=1, x+1, y)]
+
+
+
+Hints:
+
+Store the number of steps taken in map using setLoc(map,x,y,sym) where sym, in this case, is an integer. While readLoc(map,x,y) will still return a string, you can use int(sym) to convert back into an integer for comparison to the number of steps taken in the current recursive call. Before assuming that sym is a string representation of an integer be sure to check that sym is not WALL, OPEN or the position of the alien.
+
+The recursion performs a depth first search and will build up the route string as the calls return back up the chain. However, you only want the route string returned if the search reached the alien. If any of the None base cases are reached, then None should be returned back up the calls rather than the route string.
+
+
+Example run:
+python3 adm_nav.py building1.map 1 1 18 10 out.route
+############################
+#@........#..........#.....#
+#@@@@@....#..........#.....#
+#####@#########.########.###
+....#@@@@@@..............#..
+....######@..#############..
+....#....#@..#...#.......#..
+....#....#@..#...#.......#..
+....######@..#####.......#..
+#####....#@..#...#.......#..
+#........#@..#...#@@@@...#..
+.........#@..########@.###..
+#.........@@@@@@@@@@@@.#....
+#......................#....
+########################....
+Route has been saved in: out.route

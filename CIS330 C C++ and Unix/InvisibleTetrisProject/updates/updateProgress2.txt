@@ -1,0 +1,9 @@
+CIS 330 Winter 2016 Team Project
+Haomin He, Guangyun Hou, Yanting Liu
+2016/3/7
+
+Had meeting and discussion: 
+Try to figure out all the bugs: optimize the display of the Tetris,
+fix minor problems in the Tetris board, change the way for counting 
+score and bonus, add reasonable comments, FINALLY we find an awesome 
+way to make it to be an invisible Tetris. 

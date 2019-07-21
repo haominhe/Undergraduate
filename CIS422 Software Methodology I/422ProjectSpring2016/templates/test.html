@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> 
+<head>
+<title>SafeRide Dispatch</title>
+
+  <!-- 'viewport' is used by bootstrap to respond to device size -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Javascript:  JQuery from a content distribution network (CDN) -->
+  <script
+     src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+  </script>
+
+  <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+  <link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+  </script>
+
+
+  <!-- Our own style sheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/memos.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='apple-touch-icon-57x57.png')}}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='apple-touch-icon-60x60.png')}}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='apple-touch-icon-72x72.png')}}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='apple-touch-icon-76x76.png')}}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='apple-touch-icon-114x114.png')}}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='apple-touch-icon-120x120.png')}}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-touch-icon-144x144.png')}}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-touch-icon-152x152.png')}}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon-180x180.png')}}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png')}}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='android-chrome-192x192.png')}}" sizes="192x192">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-96x96.png')}}" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-16x16.png')}}" sizes="16x16">
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json')}}">
+  <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg')}}" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="{{ url_for('static', filename='mstile-144x144.png')}}">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+  <!-- Leaflet:  includes javascript and css -->
+  <link rel="stylesheet" href="static/leaflet.css" />
+  <script type="text/javascript" src="static/leaflet.js"></script>
+
+  <script src="static/dispatchConfig.js"></script>
+  <script src="static/ion.sound.js"></script>
+
+
+  <script type=text/javascript>
+  </script>
+  </head>
+
+
+</head>
+<body>
+
+  <div class="col-md-1">
+    <form action="" method=post>
+    <a href="javascript:void()" id= "move" data-toggle="tooltip" title="Move Item"><button type="button" class="btn btn-primary">Move Item</button></a>
+    <script>$(function() {
+    $('a#move').bind('click', function() {
+    platlong = pickup1.getLatLng();
+    console.log(platlong);
+    platlong["lat"] += 0.05;
+    platlong["lng"] += 0.05;
+    console.log(platlong);
+    pickup1.setLatLng(platlong).update();
+    return false;
+  });
+});
+    </script>
+    </form>
+  </div>
+
+<div id="mapid" style="width: 100%; height: 600px" ></div>
+
+<script>var mapstuff = document.getElementById('mapid');</script>
+
+<script type="text/javascript">
+
+//map functions
+
+var seethru = 0.25;
+var opaque = 1;
+
+var tiles = L.tileLayer(
+'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2aWR6aW1tZXJseSIsImEiOiJjaWZ6dnF0cWQ2NWNjdTVrcTl5MGQ3MTlsIn0.al5p6-4MP-NkK3hM8o3Tkw'
+, {
+    maxZoom: 18,
+    attribution: 'SafeRide Boundaries',
+    id: 'mapbox.streets'
+});
+
+var VanG1 = new L.LayerGroup();
+var VanG2 = new L.LayerGroup();
+var VanG3 = new L.LayerGroup();
+var VanG4 = new L.LayerGroup();
+var VanG0 = new L.LayerGroup();
+
+var ColorIcon = L.Icon.extend({
+  options: {
+    shadowUrl: '../static/images/marker-shadow.png',
+    iconSize:     [25, 41],
+    shadowSize:   [41, 41],
+    iconAnchor:   [12, 40],
+    shadowAnchor: [12, 40],
+    popupAnchor:  [0, -45]
+  }
+});
+
+var greenIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-GREEN.png'}),
+    pinkIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-PINK.png'}),
+    aquaIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-AQUA.png'}),
+    whiteIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-WHITE.png'});
+
+var baseLayers = {
+    "Streets": tiles
+};
+
+var overlays = {
+    "Van 1": VanG1,
+    "Van 2": VanG2,
+    "Van 3": VanG3,
+    "Van 4": VanG4,
+    "No Van": VanG0
+};
+var mymap = L.map('mapid', {
+    center: [44.045, -123.075],
+    zoom:  12,
+    layers: [tiles, VanG0, VanG1, VanG2, VanG3, VanG4]
+});
+
+L.control.layers(baseLayers, overlays).addTo(mymap);
+
+var path = L.polyline( [ [0,0] ] ).addTo(mymap);
+
+{% for memo in session.memos %}
+
+{% if memo.history == "current" %}
+
+  var pickup{{loop.index}};
+  var dropoff{{loop.index}};
+
+  {% if (memo.platlong != None) and (memo.pickup != "??") %}
+
+  pickup{{loop.index}} = L.marker( {{memo.platlong}} , {opacity:seethru} );
+  {% if memo.van == "1" %}
+  pickup{{loop.index}}.setIcon( pinkIcon ).bindPopup( "Van#1: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG1);
+  {% elif memo.van == "2" %}
+  pickup{{loop.index}}.setIcon( greenIcon ).bindPopup( "Van#2: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG2);
+  {% elif memo.van == "3" %}
+  pickup{{loop.index}}.setIcon( aquaIcon ).bindPopup( "Van#3: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG3);
+  {% elif memo.van == "4" %}
+  pickup{{loop.index}}.setIcon( whiteIcon ).bindPopup( "Van#4: <b>Pickup:</b> Van#1: {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG4);
+  {% else %}
+  pickup{{loop.index}}.bindPopup( "No Van Assigned: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG0);
+  {% endif %}
+
+
+  {% endif %}
+  {% if (memo.dlatlong != None) and (memo.dropoff != "??") %}
+
+  dropoff{{loop.index}} = L.marker( {{memo.dlatlong}} , {opacity:seethru} );
+  {% if memo.van == "1" %}
+  dropoff{{loop.index}}.setIcon( pinkIcon ).bindPopup( "Van#1: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG1);
+  {% elif memo.van == "2" %}
+  dropoff{{loop.index}}.setIcon( greenIcon ).bindPopup( "Van#2: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG2);
+  {% elif memo.van == "3" %}
+  dropoff{{loop.index}}.setIcon( aquaIcon ).bindPopup( "Van#3: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG3);
+  {% elif memo.van == "4" %}
+  dropoff{{loop.index}}.setIcon( whiteIcon ).bindPopup( "Van#4: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG4);
+  {% else %}
+  dropoff{{loop.index}}.bindPopup( "No Van Assigned: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG0);
+  {% endif %}
+
+  {% endif %}
+
+  {% if (memo.platlong != None) and (memo.pickup != "??") and (memo.dlatlong != None) and (memo.dropoff != "??") %}
+
+  //latlngs{{loop.index}}.push(pickup{{loop.index}}.getLatLng());
+  //latlngs{{loop.index}}.push(dropoff{{loop.index}}.getLatLng());
+  //path{{loop.index}} = L.polyline( latlngs{{loop.index}}, {opacity:0}).addTo(mymap);
+
+  pickup{{loop.index}}.on('popupopen', function() {
+    pickup{{loop.index}}.setOpacity(opaque);
+    dropoff{{loop.index}}.setOpacity(opaque);
+    
+    var latlngs = Array();
+    latlngs.push(pickup{{loop.index}}.getLatLng());
+    latlngs.push(dropoff{{loop.index}}.getLatLng());
+    path.setLatLngs( latlngs ).redraw();
+  });
+  pickup{{loop.index}}.on('popupclose', function() {
+    pickup{{loop.index}}.setOpacity(seethru);
+    dropoff{{loop.index}}.setOpacity(seethru);
+  });
+
+  dropoff{{loop.index}}.on('popupopen', function() {
+    dropoff{{loop.index}}.setOpacity(opaque);
+    pickup{{loop.index}}.setOpacity(opaque);
+
+    var latlngs = Array();
+    latlngs.push(pickup{{loop.index}}.getLatLng());
+    latlngs.push(dropoff{{loop.index}}.getLatLng());
+    path.setLatLngs( latlngs ).redraw();
+  });
+  dropoff{{loop.index}}.on('popupclose', function() {
+    dropoff{{loop.index}}.setOpacity(seethru);
+    pickup{{loop.index}}.setOpacity(seethru);
+  });
+
+  {% endif %}
+
+
+{% endif %}
+{% endfor %}
+
+//var mymap = L.map('mapid').setView([44.045, -123.075], 12);
+
+
+
+
+
+platlong = pickup1.getLatLng();
+console.log(platlong);
+platlong["lat"] += 0.05;
+platlong["lng"] += 0.05;
+console.log(platlong);
+pickup1.setLatLng(platlong).update();
+
+
+
+
+</script>
+
+
+</html>

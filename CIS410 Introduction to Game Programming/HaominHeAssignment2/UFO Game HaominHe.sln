@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFO Game HaominHe", "UFO Game HaominHe.csproj", "{6C371C1B-EAA2-BE14-0E30-A6BA55233727}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFO Game HaominHe.Editor", "UFO Game HaominHe.Editor.csproj", "{47142B08-CDA0-2607-11AC-A525C56DA265}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C371C1B-EAA2-BE14-0E30-A6BA55233727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C371C1B-EAA2-BE14-0E30-A6BA55233727}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C371C1B-EAA2-BE14-0E30-A6BA55233727}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C371C1B-EAA2-BE14-0E30-A6BA55233727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47142B08-CDA0-2607-11AC-A525C56DA265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47142B08-CDA0-2607-11AC-A525C56DA265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47142B08-CDA0-2607-11AC-A525C56DA265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47142B08-CDA0-2607-11AC-A525C56DA265}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

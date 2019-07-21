@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>Random Sequence</title>
+		<script src="../js/random.js"></script>
+		<script>
+			function GenerateSequence() {
+				var sequence = RandomChar('abcdefghijklmnopqrstuvwxyz') + RandomChar('abcdefghijklmnopqrstuvwxyz') + RandomChar('abcdefghijklmnopqrstuvwxyz');
+				document.getElementById('outputDiv').innerHTML = sequence;
+			}
+
+		</script>
+	</head>
+	<body>
+		<h2>Generate 3-Letter Sequence</h2>
+		<input type="button" value="Go!" onclick = "GenerateSequence();">
+		<hr>
+		<h3>Your Random 3-Letter Sequence</h3>
+		<div id="outputDiv">
+			&nbsp;
+		</div>
+	</body>
+</html>

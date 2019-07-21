@@ -1,0 +1,112 @@
+Two-servers queueing system
+
+Mean interarrival time      0.425 minutes
+
+Server 1 Mean service time           0.425 minutes
+
+Server 2 Mean service time           0.900 minutes
+
+Number of customers          2000
+
+Run the two-servers queueing simulation ten times
+
+ ------------------------------Run number:0 
+
+
+Average delay in queue     10.852 minutes
+
+Average number in queue    25.511
+
+Server utilization          1.979
+
+Time simulation ended     853.043 minutes
+ ------------------------------Run number:1 
+
+
+Average delay in queue      6.251 minutes
+
+Average number in queue    14.577
+
+Server utilization          1.959
+
+Time simulation ended     865.372 minutes
+ ------------------------------Run number:2 
+
+
+Average delay in queue      5.345 minutes
+
+Average number in queue    12.439
+
+Server utilization          1.963
+
+Time simulation ended     870.327 minutes
+ ------------------------------Run number:3 
+
+
+Average delay in queue      7.880 minutes
+
+Average number in queue    18.142
+
+Server utilization          1.966
+
+Time simulation ended     869.220 minutes
+ ------------------------------Run number:4 
+
+
+Average delay in queue      3.134 minutes
+
+Average number in queue     7.203
+
+Server utilization          1.904
+
+Time simulation ended     872.201 minutes
+ ------------------------------Run number:5 
+
+
+Average delay in queue      3.452 minutes
+
+Average number in queue     7.857
+
+Server utilization          1.927
+
+Time simulation ended     880.682 minutes
+ ------------------------------Run number:6 
+
+
+Average delay in queue      9.998 minutes
+
+Average number in queue    23.473
+
+Server utilization          1.997
+
+Time simulation ended     864.337 minutes
+ ------------------------------Run number:7 
+
+
+Average delay in queue      7.556 minutes
+
+Average number in queue    17.388
+
+Server utilization          1.981
+
+Time simulation ended     884.177 minutes
+ ------------------------------Run number:8 
+
+
+Average delay in queue     22.227 minutes
+
+Average number in queue    50.467
+
+Server utilization          1.984
+
+Time simulation ended     882.623 minutes
+ ------------------------------Run number:9 
+
+
+Average delay in queue     10.070 minutes
+
+Average number in queue    23.397
+
+Server utilization          1.972
+
+Time simulation ended     871.894 minutes

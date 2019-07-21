@@ -1,0 +1,18 @@
+[
+  '{{repeat(100, 200)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    name: '{{"fake"+firstName()}} {{surname()}}',
+    uoid: '{{integer(950000000, 951999999)}}',
+    phone: '{{integer(1000000000, 9999999999)}}',
+    pickup_latitude: '{{floating(44.0280009, 44.0568753)}}',
+    pickup_longitude: '{{floating(-123.1103897, -123.0444717)}}',
+    dropoff_latitude: '{{floating(44.0280009, 44.0568753)}}',
+    dropoff_longitude: '{{floating(-123.0444717, -123.1103897)}}',
+    riders: '{{integer(1, 3)}}',
+    hour: '{{integer(7, 11)}}',
+    minute: '{{integer(0, 11)*5}}'
+    
+  }
+]

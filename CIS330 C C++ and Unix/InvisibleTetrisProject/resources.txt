@@ -1,0 +1,36 @@
+SDL Setup:
+http://lazyfoo.net/tutorials/SDL/01_hello_SDL/windows/index.php
+
+SDL Tutorial YOUTUBE Playlist:
+https://www.youtube.com/watch?v=kxhBhHNIvJc&index=18&list=PLHJE4y54mpC5_eEz9gCqIkNpU-n_2eyNt
+https://www.youtube.com/watch?v=DgpcRIK2uug&list=PLHJE4y54mpC5_eEz9gCqIkNpU-n_2eyNt
+
+Learning from Other Tetris Resources/Tutorials:
+// We did a lot of research on how to write good Tetris, look through many articles and videos. 
+
+https://en.wikipedia.org/wiki/Tetris
+http://www.tetrisfriends.com/games/
+http://www.tetrisfriends.com/games/Marathon/game.php
+http://zetcode.com/tutorials/javagamestutorial/tetris/
+http://aaroncox.net/tutorials/arcade/tetris.pdf
+http://pygame.org/project-Tetris+in+73+Lines-800-.html
+http://codeincomplete.com/posts/2011/10/10/javascript_tetris/
+http://superliminal.com/tetris/Tetris.java
+http://mrcoles.com/tetris/#random
+http://noobtuts.com/unity/2d-tetris-game
+https://www.youtube.com/watch?v=htfB7D2ruXw&feature=share
+https://www.youtube.com/watch?v=X91_x7ReYyM
+https://www.youtube.com/watch?v=ZNouGfMHPQg
+https://www.youtube.com/watch?v=T30_Tt8aCOE
+http://www.freetetris.org/index.html
+http://www.freetetris.org/game.php
+https://github.com/bluesky466/Tetris
+https://github.com/PSNB92/Tetris
+https://github.com/DQNEO/CppTetris
+https://github.com/mattbierner/Super-Template-Tetris
+https://github.com/tdd-elevator-training/tetris
+https://github.com/chaficnajjar/21st-century-tetris
+https://www.khanacademy.org/computer-programming/tetris/1782938813
+http://gamedevelopment.tutsplus.com/tutorials/implementing-tetris-collision-detection--gamedev-852
+http://javilop.com/gamedev/tetris-tutorial-in-c-platform-independent-focused-in-game-logic-for-beginners/
+

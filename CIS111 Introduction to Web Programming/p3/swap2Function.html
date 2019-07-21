@@ -1,0 +1,30 @@
+<!DOCTYPE html> <!-- swap.html                                      Haomin He -->
+<!-- Web page that swaps two images at the click of a button. -->
+<!-- ======================================================== -->
+
+<html>
+	<head>
+		<title>Image Swapper</title>
+		<script>
+		function swapTwo() {
+		var saved=document.getElementById('leftImg').src;
+		document.getElementById('leftImg').src=
+		document.getElementById('rightImg').src;
+		document.getElementById('rightImg').src=saved;
+		}
+		</script>
+
+	</head>
+
+	<body>
+		<div style="text-align:center">
+			<h2>Image Swapper</h2>
+			<p>
+				<img id="leftImg" src="../images/happy.gif">
+				<img id="rightImg" src="../images/sad.gif">
+			</p>
+			<input type="button" value="Swap images"
+			onclick="swapTwo();">
+		</div>
+	</body>
+</html>

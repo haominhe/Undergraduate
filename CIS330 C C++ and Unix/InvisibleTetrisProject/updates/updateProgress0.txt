@@ -1,0 +1,61 @@
+CIS 330 Winter 2016 Team Project
+Haomin He, Guangyun Hou, Yanting Liu
+2016/2/17
+ 
+Question 1
+Please specify the team's name if any (individual projects can have a name, but don't have to have one).
+Team name and Project name:
+
+Team Name: this->team 
+Project: Invisible Tetris 
+ 
+ 
+Question 2
+Please list all students who are members of this team, starting with the lead who is submitting this survey. 
+If you are working individually, please write just your name here.
+Haomin He, Guangyun Hou, Yanting Liu
+ 
+ 
+ 
+ 
+Question 3
+Please describe briefly what you plan to do in 1-3 paragraphs.
+After team discussion, we decided to do the game Tetris (tile-matching puzzle game). Instead of doing it in 
+traditional way, we want to make the game harder by changing the color of tiles into transparent.
+In other words, when people play the game, they know what the next tile is coming (we will have a ¡°tile shape 
+coming¡± notification). But when the tile is dropping down, people cannot see it because it is transparent. 
+People have to remember what the shape is and decide where to put it. When the tile touches the ground, it will 
+appear original color and shape. People can plan their playing strategy accordingly, and they need to memorize 
+every step that they did. As playing levels go up, the tile dropping speed will go faster as well.
+ 
+ 
+ 
+ 
+Question 4
+Describe briefly what you foresee may be the risks in your proposed project and how your team may address them. 
+For example, what would happen if the only team member qualified to implement certain functionality became ill 
+or a software package you wish to use did not work as expected?
+For doing this game, we need to learn a lot information about UI display, movement control and programming 
+libraries and third party tools like SDL. We also need to worry about how the game should be design. We have 
+confidence we can do it well.
+From brainstorming, we came up 17 project ideas. If the Tetris idea cannot work, we are probably going to do 
+some other fun games.
+ 
+-CatFish: a cute cat is fishing fishes
+-Coffee Cup: pour coffee into a cup within certain range only and cannot overflow the cup.
+ 
+ 
+ 
+ 
+Question 5
+Is your project
+
+
+Software only
+
+
+
+====================================================================================
+Learning tutorials on how to set up a tertis game by using SDL and c++ and the logic.
+
+

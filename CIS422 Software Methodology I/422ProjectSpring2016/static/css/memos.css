@@ -1,0 +1,122 @@
+/*
+ * SafeRide  
+ *    Styles for 'saferide' go in this file 
+ *
+ * For Future: use preprocessor for css files such as less or sass
+ * to properly customize bootstrap buttons
+ */
+
+/* Nothing yet */
+
+body {
+    background-color: #ffd48a; 
+    font-family:sans-serif;
+}
+
+h1 {
+    color: #2f3062;
+    text-align: center;
+}
+
+h2{
+    font-size: 14pt;
+    font-style: bold;
+}
+
+
+h3{
+    background: #4679BD;
+    font-size: 14pt;
+}
+td.a {
+	border-style:dotted;
+	border-width:3px;
+	border-color:#000000; 
+	padding: 10px;
+}
+td.b {
+	border-style:solid;
+	border-width:3px;
+	border-color:#333333;
+	padding:10px;
+}
+
+p {
+    color: #2f3062;
+    font-size: 14pt;
+}
+
+.lyrics {
+    margin-left: 3em;
+    font-style: italic;
+}
+
+.attribution  {
+    font-size: smaller;
+}
+
+.center {
+    text-align: center;
+}
+
+.oncampus{
+    color: #41A220;
+    background: black;
+    font-weight: bold;
+}
+
+.offcampus{
+    color: #D52637;
+    background: black;
+    font-weight: bold;
+}
+
+.btn-primaryPink {
+    background: #FF99FF;
+    color: #333;
+}
+
+.btn-primaryGreen {
+    background: #A3D900;
+    color: #333;
+}
+.btn-primaryBlue {
+    background: #87CEFA;
+    color: #333;
+}
+.btn-primaryPurple {
+    background: #f0f8ff;
+    color: #333;
+}
+
+.this-term{
+    border: 5px solid red;
+    text-align: center;
+
+}
+
+#lblue {
+    background-color:#87CEFA;
+    color:#333;
+}
+
+
+#pink {
+    background-color:#FF99FF;
+    color:#333;
+}
+
+#green {
+    background-color:#A3D900;
+    color:#333;
+}
+#purple {
+    background-color:#f0f8ff;
+    color:#333;
+}
+
+
+
+
+
+

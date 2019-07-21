@@ -1,0 +1,19 @@
+SOURCES = directory.c main.c
+HEADERS = directory.h  
+OBJECTS = $(SOURCES:.c=.o)
+LIBS = -lm
+
+CC = gcc
+CFLAGS = -std=c99 -g
+
+%.o: %.c
+	$(CC) -c $(CFLAGS) $<
+
+main: $(OBJECTS)
+	$(CC) -o $@ $(OBJECTS)
+
+directory: $(OBJECTS)
+	$(CC) -o $@ $(OBJECTS) $(LIBS)
+
+clean: 
+	$(RM) directory $(OBJECTS) 

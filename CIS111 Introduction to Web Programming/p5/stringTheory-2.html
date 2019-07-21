@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>stringTheory-2</title>
+		<script src = "../js/myFunctions.js">
+
+		</script>
+	</head>
+	<body>
+		<h2>stringTheory-2</h2>
+		<input type= "text" id = 'inBox' value = ''>
+		<button
+		onclick="document.getElementById('outBox').innerHTML = reverse(document.getElementById('inBox').value)">
+			Reverse
+		</button>
+		<button onclick="document.getElementById('outBox1').innerHTML = isPal(document.getElementById('inBox').value)">
+			Is Palindrome?
+		</button>
+		<hr>
+		<div id="outBox">
+			&nbsp;
+		</div>
+		<div id="outBox1">
+			&nbsp;
+		</div>
+
+	</body>
+</html>

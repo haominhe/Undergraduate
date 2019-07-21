@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Hiway Patrol</title>
+
+		<link href="../../..//css/cis.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="../css/donuts.css" />
+
+		<script>
+			function passJudgement(judge) {
+				var judge = parseFloat(judge);
+				if ((judge >= 61) && (judge <= 80))
+					return "Ticket";
+				else if (judge <= 60)
+					return "No ticket";
+				else
+					return "Book'em, Danno!"
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="frame">
+			<h2>Hiway Patrol 'Bot <img src="../images/hiwayPatrolCar.png" hspace="5" border="1" /></h2>
+			<pre style='text-align:left;font:18px arial'>
+Drive 55: It's not just a Good Idea-- it's the Law<br />!
+<strong>Rule:</strong> If your speed is
+
+   &lt;= 60: No ticket
+   61 .. 80: Ticket
+   &gt; 80: Book'em, Danno!
+
+</pre>
+			<form id="form1" name="hpForm" action="">
+				<div class="field">&nbsp;</div>
+				<div class="field">
+					My Speed:
+					<input name="speed" type="text" id='inBox'>
+				</div>
+				<div class="field">
+					What's the Ticket?:
+					<input name="speed" type="text" id='outBox'>
+					<br />
+					<br />
+				</div>
+				<div class="field">
+					<input name="" type="button" value="Pass Judgement"
+					onclick="document.getElementById('outBox').value = passJudgement(document.getElementById('inBox').value)">
+				</div>
+			</form>
+		</div>
+		<hr class="credits" />
+
+	</body>
+</html>

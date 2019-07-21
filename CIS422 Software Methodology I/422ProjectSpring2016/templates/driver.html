@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 'viewport' is used by bootstrap to respond to device size -->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SafeRide Driver</title>
+
+  
+  
+
+  <!-- Javascript:  JQuery from a content distribution network (CDN) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="static/bootstrap.min.js"></script>
+
+  <!-- Our own style sheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/saferide.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='apple-touch-icon-57x57.png')}}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='apple-touch-icon-60x60.png')}}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='apple-touch-icon-72x72.png')}}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='apple-touch-icon-76x76.png')}}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='apple-touch-icon-114x114.png')}}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='apple-touch-icon-120x120.png')}}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-touch-icon-144x144.png')}}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-touch-icon-152x152.png')}}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon-180x180.png')}}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png')}}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='android-chrome-192x192.png')}}" sizes="192x192">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-96x96.png')}}" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-16x16.png')}}" sizes="16x16">
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json')}}">
+  <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg')}}" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="{{ url_for('static', filename='mstile-144x144.png')}}">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+  <!-- Leaflet:  includes javascript and css -->
+  <link rel="stylesheet" href="static/leaflet.css" />
+  <script type="text/javascript" src="static/leaflet.js"></script>
+
+  <script src="static/dispatchConfig.js"></script>
+  <script src="static/ion.sound.js"></script>
+
+
+  <script type=text/javascript>
+  </script>
+  </head>
+
+
+</head>
+<div class="container">
+<img src="static/saferide_banner.png" class="img-responsive">
+<b><ul class="nav nav-tabs">
+  <li class="active"><a href="#" data-toggle="tooltip" title="Home page of SafeRide schedule">Home</a></li>
+  <li><a href="logout" data-toggle="tooltip" title="Logout the current account">Logout</a></li>
+</ul></b>
+
+<form name="vanAssignment" id="vanAssignment" action="sendVanNumtoDB" method=post>
+    <input type="hidden" name="van" id="" value="">
+    <input type="hidden" name="color" id="" value="">
+    <input type="hidden" class="form-control" name="my_id" value="" /> 
+    
+</form>
+</div>
+
+<div id="mapsection" class="row">
+<div class="col-md-6 divScroll">
+
+{% if session.memos %}
+<table id="mytable" class="table table-bordered">
+   
+  {% for memo in session.memos %}
+  {% if memo.history == "current" %}
+
+  <tr>
+  {% set memoid = memo.my_id|replace("0.","") %}
+
+  <div class="memo" id = "tr_id2{{memoid}}">
+  <div id = "van_id2{{memoid}}" class="{% if memo.van=="1" %}van1{% elif memo.van=="2" %}van2{% elif memo.van=="3" %}van3{% elif memo.van=="4" %}van4{% endif %}">
+    <script>
+    var theResult{{memoid}};
+    $.getJSON('/_return_record_from_db', {
+      the_id: "{{memo.my_id}}",
+      the_field: "time"
+    }, function(data) {
+      theResult = data.result;
+      document.getElementById("memo{{memoid}}.time2").innerHTML = "<h4>"+data.result['time']+"</h4>";
+      document.getElementById("memo{{memoid}}.riders2").innerHTML ="Riders: "+"<b>"+data.result['riders']+"</b>"; 
+      document.getElementById("memo{{memoid}}.pickup2").innerHTML ="Pickup: "+data.result['pickup']; 
+      document.getElementById("memo{{memoid}}.dropoff2").innerHTML ="Dropoff: "+data.result['dropoff']; 
+      document.getElementById("memo{{memoid}}.uoid2").innerHTML ="UOID: "+data.result['uoid']; 
+      document.getElementById("memo{{memoid}}.bike2").innerHTML ="Bike:"+data.result['bike']+"<br>"; 
+      document.getElementById("memo{{memoid}}.van2").innerHTML ="Van#:"+data.result['van']+"<br>"; 
+    });
+    </script>
+  <div class="row"><b>
+    <div class="col-md-2">
+      <div id = "memo{{memoid}}.time2" class="center"></div>  
+      <div id = "memo{{memoid}}.riders2"></div>
+    </div>
+
+    <div class="col-md-5">
+      <div id = "memo{{memoid}}.pickup2"></div>
+      <div id = "memo{{memoid}}.dropoff2"></div>
+      <div id = "memo{{memoid}}.uoid2"></div>
+    </div>
+
+    <div class="col-md-2">
+      <div id = "memo{{memoid}}.bike2"></div>
+      <div id = "memo{{memoid}}.van2"></div>
+    </div>
+
+    <div class="col-md-1">
+      <form action="" method=post>
+      <a href="javascript:void()" id= "find{{memoid}}" data-toggle="tooltip" title="Find Item"><button type="button" class="btn btn-primary">Find on Map</button></a>
+      <script>$(function() {
+      $('a#find{{memoid}}').bind('click', function() {
+      pickup{{memoid}}.openPopup();
+      return false;
+      });
+      });
+      </script>
+      </form>
+    </div>
+
+    <form action="" method=post>
+    <input type="hidden" class="form-control" name="my_id2{{memoid}}" value="{{ memoid }}" />
+    <input type="hidden" class="form-control" name="my_div2{{memoid}}" value="tr_id{{memoid}}" />
+    </form>
+
+  </b></div>
+  </div>
+  </tr>
+{% endif %}
+{% endfor %}
+</table>
+{% endif %}
+
+</div>
+<div class="col-md-6">
+  <div id="mapid" style="width: 100%; height: 600px" ></div>
+</div>
+</div> <!-- mapsection-->
+</div> <!-- container -->
+
+
+
+<script>var mapstuff = document.getElementById('mapsection');</script>
+
+<script>
+
+
+//map functions
+var seethru = 0.35;
+var opaque = 1;
+
+var tiles = L.tileLayer(
+'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2aWR6aW1tZXJseSIsImEiOiJjaWZ6dnF0cWQ2NWNjdTVrcTl5MGQ3MTlsIn0.al5p6-4MP-NkK3hM8o3Tkw'
+, {
+    maxZoom: 18,
+    attribution: 'SafeRide Boundaries',
+    id: 'mapbox.streets'
+});
+
+var VanG1 = new L.LayerGroup();
+var VanG2 = new L.LayerGroup();
+var VanG3 = new L.LayerGroup();
+var VanG4 = new L.LayerGroup();
+var VanG0 = new L.LayerGroup();
+
+var ColorIcon = L.Icon.extend({
+  options: {
+    shadowUrl: '../static/images/marker-shadow.png',
+    iconSize:     [25, 41],
+    shadowSize:   [41, 41],
+    iconAnchor:   [12, 40],
+    shadowAnchor: [12, 40],
+    popupAnchor:  [0, -45]
+  }
+});
+
+var greenIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-GREEN.png'}),
+    pinkIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-PINK.png'}),
+    aquaIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-AQUA.png'}),
+    whiteIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-WHITE.png'});
+    defaultIcon = new ColorIcon({iconUrl: '../static/images/marker-icon.png'});
+
+var baseLayers = {
+    "Streets": tiles
+};
+
+var overlays = {
+    "Van 1": VanG1,
+    "Van 2": VanG2,
+    "Van 3": VanG3,
+    "Van 4": VanG4,
+    "No Van": VanG0
+};
+var mymap = L.map('mapid', {
+    center: [44.045, -123.075],
+    zoom:  13,
+    layers: [tiles, VanG0, VanG1, VanG2, VanG3, VanG4]
+    });
+L.control.layers(baseLayers, overlays).addTo(mymap);
+
+var path = L.polyline( [ [0,0] ] ).addTo(mymap);
+
+{% for memo in session.memos %}
+
+{% if memo.history == "current" %}
+
+  {% if (memo.platlong != None) and (memo.pickup != "??") %}
+
+  {% set memoid = memo.my_id|replace("0.","") %}
+
+  var pickup{{memoid}} = L.marker( {{memo.platlong}}, {opacity:seethru} )
+  {% if memo.van == "1" %}
+  pickup{{memoid}}.setIcon( pinkIcon ).bindPopup( "Van#1: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG1);
+  {% elif memo.van == "2" %}
+  pickup{{memoid}}.setIcon( greenIcon ).bindPopup( "Van#2: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG2);
+  {% elif memo.van == "3" %}
+  pickup{{memoid}}.setIcon( aquaIcon ).bindPopup( "Van#3: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG3);
+  {% elif memo.van == "4" %}
+  pickup{{memoid}}.setIcon( whiteIcon ).bindPopup( "Van#4: <b>Pickup:</b> Van#1: {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG4);
+  {% else %}
+  pickup{{memoid}}.bindPopup( "No Van Assigned: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG0);
+  {% endif %}
+
+
+  {% endif %}
+  {% if (memo.dlatlong != None) and (memo.dropoff != "??") %}
+
+  var dropoff{{memoid}} = L.marker( {{memo.dlatlong}}, {opacity:seethru} )
+  {% if memo.van == "1" %}
+  dropoff{{memoid}}.setIcon( pinkIcon ).bindPopup( "Van#1: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG1);
+  {% elif memo.van == "2" %}
+  dropoff{{memoid}}.setIcon( greenIcon ).bindPopup( "Van#2: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG2);
+  {% elif memo.van == "3" %}
+  dropoff{{memoid}}.setIcon( aquaIcon ).bindPopup( "Van#3: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG3);
+  {% elif memo.van == "4" %}
+  dropoff{{memoid}}.setIcon( whiteIcon ).bindPopup( "Van#4: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG4);
+  {% else %}
+  dropoff{{memoid}}.bindPopup( "No Van Assigned: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG0);
+  {% endif %}
+
+  {% endif %}
+
+  {% if (memo.platlong != None) and (memo.pickup != "??") and (memo.dlatlong != None) and (memo.dropoff != "??") %}
+
+  pickup{{memoid}}.on('popupopen', function() {
+    pickup{{memoid}}.setOpacity(opaque);
+    dropoff{{memoid}}.setOpacity(opaque);
+    var latlngs = Array();
+    latlngs.push(pickup{{memoid}}.getLatLng());
+    latlngs.push(dropoff{{memoid}}.getLatLng());
+    path.setLatLngs( latlngs ).redraw();
+  });
+  pickup{{memoid}}.on('popupclose', function() {
+    pickup{{memoid}}.setOpacity(seethru);
+    dropoff{{memoid}}.setOpacity(seethru);
+    path.setLatLngs( [ [0,0] ] ).redraw();
+  });
+
+  dropoff{{memoid}}.on('popupopen', function() {
+    dropoff{{memoid}}.setOpacity(opaque);
+    pickup{{memoid}}.setOpacity(opaque);
+    var latlngs = Array();
+    latlngs.push(pickup{{memoid}}.getLatLng());
+    latlngs.push(dropoff{{memoid}}.getLatLng());
+    path.setLatLngs( latlngs ).redraw();
+  });
+  dropoff{{memoid}}.on('popupclose', function() {
+    dropoff{{memoid}}.setOpacity(seethru);
+    pickup{{memoid}}.setOpacity(seethru);
+    path.setLatLngs( [ [0,0] ] ).redraw();
+  });
+  {% endif %}
+
+
+{% endif %}
+{% endfor %}
+
+
+</script>
+
+</html>

@@ -1,0 +1,53 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 940MX (ID=0x179c)
+    Vendor:   NVIDIA
+    VRAM:     2019 MB
+    Driver:   21.21.13.7654
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.254 seconds
+Platform assembly: C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Haomin\Desktop\MISC\2019June找工作\HaominGitHub\Undergraduate\CIS410 Introduction to Game Programming\2D Roguelike Haomin He\Build\2D Roguelike HaominHe_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 2400x1350 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.433035 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.875259 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 966.
+Total: 0.431603 ms (FindLiveObjects: 0.060297 ms CreateObjectMapping: 0.040550 ms MarkObjects: 0.322644 ms  DeleteObjects: 0.007052 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.672440 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 987.
+Total: 0.533509 ms (FindLiveObjects: 0.067702 ms CreateObjectMapping: 0.043724 ms MarkObjects: 0.412914 ms  DeleteObjects: 0.006699 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.247911 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 976.
+Total: 0.539856 ms (FindLiveObjects: 0.065234 ms CreateObjectMapping: 0.042314 ms MarkObjects: 0.424903 ms  DeleteObjects: 0.006347 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.785277 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 979.
+Total: 0.580760 ms (FindLiveObjects: 0.088859 ms CreateObjectMapping: 0.044077 ms MarkObjects: 0.437244 ms  DeleteObjects: 0.009168 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 710 -> priority: 1 
+  Thread -> id: 5900 -> priority: 1 

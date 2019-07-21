@@ -1,0 +1,1012 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 'viewport' is used by bootstrap to respond to device size -->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SafeRide Dispatch</title>
+
+  
+  
+
+  <!-- Javascript:  JQuery from a content distribution network (CDN) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+
+<link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="static/bootstrap.min.js"></script>
+
+  <!-- Our own style sheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/saferide.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='apple-touch-icon-57x57.png')}}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='apple-touch-icon-60x60.png')}}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='apple-touch-icon-72x72.png')}}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='apple-touch-icon-76x76.png')}}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='apple-touch-icon-114x114.png')}}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='apple-touch-icon-120x120.png')}}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-touch-icon-144x144.png')}}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-touch-icon-152x152.png')}}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon-180x180.png')}}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png')}}" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='android-chrome-192x192.png')}}" sizes="192x192">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-96x96.png')}}" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-16x16.png')}}" sizes="16x16">
+  <link rel="manifest" href="{{ url_for('static', filename='manifest.json')}}">
+  <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg')}}" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="{{ url_for('static', filename='mstile-144x144.png')}}">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+  <!-- Leaflet:  includes javascript and css -->
+  <link rel="stylesheet" href="static/leaflet.css" />
+  <script type="text/javascript" src="static/leaflet.js"></script>
+
+  <script src="static/dispatchConfig.js"></script>
+  <script src="static/ion.sound.js"></script>
+
+
+  <script type=text/javascript>
+  </script>
+  </head>
+
+
+</head>
+<body>
+<div class="container">
+<img src="static/saferide_banner.png" class="img-responsive">
+<!--<b><ul class="nav nav-tabs">
+  <li class="active"><a href="#" data-toggle="tooltip" title="Home page of SafeRide schedule">Home</a></li>
+  <li><a href="testd" onclick="return areyousure()" data-toggle="tooltip" title="Deletes all entries from database">Delete All</a></li>
+  <li><a href="testw" onclick="return areyousure()" data-toggle="tooltip" title="Will write 50ish entries to schedule">Test Write</a></li>
+  <li><a href="auto"  onclick="return areyousure()" data-toggle="tooltip" title="Only run once per day for now please">Test Generate Schedule</a></li>
+  <li><a href="clear_schedule" onclick="return areyousure()" data-toggle="tooltip" title="Clears all van assignments">Clear Schedule</a></li>
+  
+
+</ul></b>     TEST MENU--> 
+
+
+<b><ul class="nav nav-tabs">
+  <li><a href="javascript:showVans()" data-toggle="tooltip" title="Timeline view of the schedule">Vans</a></li>
+  <li><a href="javascript:showMemos()" data-toggle="tooltip" title="All the entries one by one">Schedule</a></li>
+  <li><a href="javascript:showMaps()" data-toggle="tooltip" title="Map View of the schedule">Map</a></li>
+  <li><a href="dispatchnew" data-toggle="tooltip" title="New request from phone call">Insert New Entry</a></li>
+  <li><a href="dhistory" data-toggle="tooltip" title="History of finished requests">History</a></li>
+  <li><a href="dtallies" data-toggle="tooltip" title="Generate tallies">Tallies</a></li>
+  <li><a href="logout" data-toggle="tooltip" title="Logout the current account">Logout</a></li>
+</ul></b>
+</div>
+
+<hr>
+<div class="container-fluid">
+<div id="memolist">
+
+{% set Van_1 = session.van1operating %}
+{% set Van_2 = session.van2operating %}
+{% set Van_3 = session.van3operating %}
+{% set Van_4 = session.van4operating %}
+
+{% if session.memos %}
+<table id="mytable" class="table table-bordered">
+ 
+  
+   
+   <div id="isbeforeall"></div>
+  {% for memo in session.memos %}
+  {% if memo.history == "current" %}
+
+  {% set memoid = memo.my_id|replace("0.","") %}
+  <div id="beforeid{{memoid}}"></div>
+  <div class="memo" id = "tr_id{{memoid}}">
+  
+  <div id = "van_id{{memoid}}" class="{% if memo.van=="1" %}van1{% elif memo.van=="2" %}van2{% elif memo.van=="3" %}van3{% elif memo.van=="4" %}van4{% endif %}">
+  <div class="row"><b>
+    <div class="col-md-1">
+    <script>
+    var theResult{{memoid}};
+    var phone{{memoid}};
+    var name{{memoid}};
+    var pickup_address{{memoid}};
+    var dropoff_address{{memoid}};
+    var id{{memoid}} = {{memo.my_id}};
+    //var platlong{{memoid}}; //unsure if we need these?
+    //var dlatlong{{memoid}};
+    $.getJSON('/_return_record_from_db', {
+      the_id: "{{memo.my_id}}",
+      the_field: "time"
+    }, function(data) {
+      theResult = data.result;
+      document.getElementById("memo{{memoid}}.time").innerHTML = "<h4>"+data.result['time']+"</h4>";
+      document.getElementById("memo{{memoid}}.riders").innerHTML ="Riders: "+"<b>"+data.result['riders']+"</b>"; 
+       
+      phone{{memoid}} = data.result['phone']; 
+      name{{memoid}} = data.result['name']; 
+      pickup_address{{memoid}} = data.result['pickup'];
+      dropoff_address{{memoid}} = data.result['dropoff'];
+      //platlong{{memoid}};
+      //dlatlong{{memoid}};
+      document.getElementById("memo{{memoid}}.phone").innerHTML = phone{{memoid}};
+      document.getElementById("memo{{memoid}}.name").innerHTML = name{{memoid}};
+      document.getElementById("memo{{memoid}}.pickup").innerHTML ="Pickup: "+pickup_address{{memoid}}; 
+      document.getElementById("memo{{memoid}}.dropoff").innerHTML ="Dropoff: "+dropoff_address{{memoid}}; 
+      document.getElementById("memo{{memoid}}.uoid").innerHTML = data.result['uoid'];
+      
+      document.getElementById("memo{{memoid}}.bike").innerHTML ="Bike:"+data.result['bike']+"<br>"; 
+      document.getElementById("memo{{memoid}}.comments").innerHTML =data.result['comments']; 
+      //document.getElementById("memo{{memoid}}.distance").innerHTML ="AtoB:"+data.result['distance']; 
+      //document.getElementById("memo{{memoid}}.estimate").innerHTML ="AtoB:"+data.result['estimate']; 
+      if (data.result['bike']=="True" || data.result['bike']=="true"){
+        
+        var img = document.createElement('img')
+      img.src = 'static/images/bike.png';
+      document.getElementById('memo{{memoid}}.bike').appendChild(img);
+      }
+    });
+    </script>
+    
+    <div id = "memo{{memoid}}.time" class="center"></div>  
+    
+   
+    </div>
+
+    <div class="col-md-3">
+    <div id = "memo{{memoid}}.pickup"></div>
+    <div id = "memo{{memoid}}.dropoff"></div>
+    </div>
+    <div class="col-md-1">
+    <div id = "memo{{memoid}}.bike"></div>
+    </div>
+    <div class="col-md-2">
+    <div id = "memo{{memoid}}.name"></div>
+    <div id = "memo{{memoid}}.comments"></div>
+    </div>
+    <div class="col-md-2">
+    <div id = "memo{{memoid}}.phone"></div>
+    <div id = "memo{{memoid}}.uoid"></div>
+    </div>
+    
+    <div class="col-md-2">
+    <div id = "memo{{memoid}}.distance"></div>
+    <div id = "memo{{memoid}}.estimate"></div>
+    </div>
+    
+    <div class="col-md-1">
+      <div id = "van_text{{memoid}}" align="left">
+      {% if memo.van=='' %}  
+      {% else %} Van#{{memo.van}} Assigned
+      {% endif %}
+      </div>
+    </div>
+
+
+ </b> </div><!--row-->
+
+<div class="row">
+  <div class="col-md-1">
+  <div id = "memo{{memoid}}.riders" class="center"></div>
+  </div>
+  
+  
+    
+
+  <div class="col-md-1">
+    <button type="button" class="btn btn-primary" onclick="putHistory(id{{memoid}},'tr_id{{memoid}}','tr_id2{{memoid}}',pickup{{memoid}},dropoff{{memoid}})" data-toggle="tooltip" title="Put this record into nightly history">To History </button>
+   
+  </div>
+
+
+  <div class="col-md-1">
+    <form action="{{ url_for('editrecord') }}" method=post>
+    <input type="hidden" class="form-control" name="my_id" value="{{ memo.my_id }}" />
+    <input type="submit" value="Edit" class="btn btn-primary" data-toggle="tooltip" title="Edit this record"/>
+    </form>
+  </div>
+
+
+  <div class="col-md-1">
+    {% if memo.oncampus == "true" %}
+    <div class="oncampus"> On Campus</div>
+    {% else %}
+    <div class="offcampus"> Off Campus</div>
+    {% endif %}
+  </div>
+  
+
+  <div class="col-md-1">
+{% if Van_1 == 1 %}
+<button type="button" class="btn btn-primaryVan1" data-toggle="tooltip" onclick='assignVan(1, id{{memoid}}, "van_id{{memoid}}", "van_id2{{memoid}}", "van_text{{memoid}}");pickup{{memoid}}.setIcon( pinkIcon ).update();dropoff{{memoid}}.setIcon( pinkIcon ).update()' title="Assign Van#1 to this pickup">Van#1</button>
+{% endif %}
+</div>
+<div class="col-md-1">
+{% if Van_2 == 1 %}
+<button type="button" class="btn btn-primaryVan2" data-toggle="tooltip" onclick='assignVan(2, id{{memoid}}, "van_id{{memoid}}", "van_id2{{memoid}}", "van_text{{memoid}}");pickup{{memoid}}.setIcon( greenIcon ).update();dropoff{{memoid}}.setIcon( greenIcon ).update()' title="Assign Van#2 to this pickup">Van#2</button>
+{% endif %}
+</div>
+<div class="col-md-1">
+{% if Van_3 == 1 %}
+<button type="button" class="btn btn-primaryVan3" data-toggle="tooltip" onclick='assignVan(3, id{{memoid}}, "van_id{{memoid}}", "van_id2{{memoid}}", "van_text{{memoid}}");pickup{{memoid}}.setIcon( aquaIcon ).update();dropoff{{memoid}}.setIcon( aquaIcon ).update()' title="Assign Van#3 to this pickup">Van#3</button>
+{% endif %}
+</div>
+<div class="col-md-1">
+{% if Van_4 == 1 %}
+<button type="button" class="btn btn-primaryVan4" data-toggle="tooltip" onclick='assignVan(4, id{{memoid}}, "van_id{{memoid}}", "van_id2{{memoid}}", "van_text{{memoid}}");pickup{{memoid}}.setIcon( whiteIcon ).update();dropoff{{memoid}}.setIcon( whiteIcon ).update()' title="Assign Van#4 to this pickup">Van#4</button>
+{% endif %}
+</div>
+<div class="col-md-1">
+<button type="button" class="btn btn-danger" data-toggle="tooltip" onclick='assignVan(0, id{{memoid}}, "van_id{{memoid}}", "van_id2{{memoid}}", "van_text{{memoid}}");pickup{{memoid}}.setIcon( defaultIcon ).update();dropoff{{memoid}}.setIcon( defaultIcon ).update()' title="Cancel assignment to this pickup">Cancel Van</button>
+</div>
+
+{% if session.phone_enabled %}
+<div class="col-md-1"><div id= "textMessage" ><button type="button" class="btn btn-primary" data-toggle="tooltip" onclick="sendText(phone{{memoid}},'Dave', 'new mail for dave')" title="Send a text message when the van has arrived at the requested location">Test Text</button>
+</div></div>
+{% endif %}
+
+
+<div class="col-md-2">
+<button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete this request" onclick="deleteRecord(id{{memoid}},'tr_id{{memoid}}','tr_id2{{memoid}}',pickup{{memoid}},dropoff{{memoid}})">Delete </button>
+</div>
+
+</div><!--row-->
+<hr>
+</div><!--vanid-->
+
+
+<br>
+  </div> <!-- memo -->
+
+  <!--<div id="id{{memo.my_id[2:]}}"></div>            this is how we want to format the id's inside a div, (removes 0. at beginning) the 0. doesn't work for whatever reason -->
+  
+  <div id="endofid{{memoid}}"><!-- this line added just as stub until we get above code working, this will be easy to point to first div with id1--></div>
+  {% endif %}
+  {% endfor %}
+
+{% else %}
+  <!--<p>No riders for you. </p>  this is to avoid future error of adding to nothing, perhaps we can script the disappearrance, but it is last minute-->
+<div id="endofidstart"></div> <!--  this is insertion point when there are no entries initially  -->
+{% endif %}
+<div id="norecords"></div>
+</table>
+
+</div>
+
+
+
+
+<script>
+var memostuff = document.getElementById('memolist');
+$(memostuff).hide();
+
+
+</script>
+
+
+
+<div id="vanstuff">
+
+
+
+
+<!------------------For Van------------------>
+
+
+
+
+<br></br>
+<!--
+<button type="button" class="btn btn-primary"> Generate Schedule</button>
+<br></br>
+-->
+
+<div >
+  <p>Which vans are operating tonight?     </p>
+    <form action="form_action.asp">
+      <input type="checkbox" id="van1check" name="van1" value="van1check"> Van#1 &nbsp &nbsp
+      <input type="checkbox" id="van2check" name="van2" value="van2check"> Van#2 &nbsp &nbsp
+      <input type="checkbox" id="van3check" name="van3" value="van3check"> Van#3 &nbsp &nbsp
+      <input type="checkbox" id="van4check" name="van4" value="van4check"> Van#4 &nbsp &nbsp
+      <button type="button" class="btn btn-primary" data-toggle="tooltip" title="Submit Vans" onclick="countVans()">Submit Vans</button>
+    </form>
+</div>
+
+<script type="text/javascript">
+
+
+var VanList = new Array(0,0,0,0);
+
+$('#van1check').click(function() {
+  if (this.checked) {
+    VanList[0] = 1;
+  } else {
+    VanList[0] = 0;
+  }
+});
+
+$('#van2check').click(function() {
+  if (this.checked) {
+    VanList[1] = 1;
+  } else {
+    VanList[1] = 0;
+  }
+});
+
+$('#van3check').click(function() {
+  if (this.checked) {
+    VanList[2] = 1;
+  } else {
+    VanList[2] = 0;
+  }
+});
+
+$('#van4check').click(function() {
+  if (this.checked) {
+    VanList[3] = 1;
+  } else {
+    VanList[3] = 0;
+  }
+});
+
+function countVans() {
+  ion.sound.play("button_click");
+  $.get('/_count_vans', { van1:VanList[0], van2:VanList[1], van3:VanList[2], van4:VanList[3] });
+}
+
+</script>
+
+<!------------------Google Developers Timelines------------------>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["timeline"]});
+  google.charts.setOnLoadCallback(drawChart);
+  var results2;
+  
+  var dataTableCopy;
+  function drawChart() {
+    var container = document.getElementById('vanTimelineDisplay');
+    var chart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Van' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+    dataTable.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}})
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+
+
+
+$.getJSON('/_find_van_schedule', {
+      the_van: "1"
+    }, function(data) {
+        
+        console.log(data.results);
+        results = data.results;
+        console.log(results.length);
+        
+        for (i=0; i<results.length; i+=12){
+            dataTable.addRow([ 'Van#1', results[i],results[i+11], new Date(results[i+1],results[i+2],results[i+3],results[i+4],results[i+5],0), new Date(results[i+6],results[i+7],results[i+8],results[i+9],results[i+10],0) ]);  
+            
+        }
+
+        
+        
+          
+        
+
+$.getJSON('/_find_van_schedule', {
+      the_van: "2"
+    }, function(data) {
+        
+        console.log(data.results);
+        results = data.results;
+        console.log(results.length);
+        
+        for (i=0; i<results.length; i+=12){
+            dataTable.addRow([ 'Van#2', results[i],results[i+11], new Date(results[i+1],results[i+2],results[i+3],results[i+4],results[i+5],0),  new Date(results[i+6],results[i+7],results[i+8],results[i+9],results[i+10],0) ]);  
+            
+        }
+
+        
+        
+          
+        
+
+$.getJSON('/_find_van_schedule', {
+      the_van: "3"
+    }, function(data) {
+        
+        console.log(data.results);
+        results = data.results;
+        console.log(results.length);
+        
+        for (i=0; i<results.length; i+=12){
+            dataTable.addRow([ 'Van#3', results[i],results[i+11], new Date(results[i+1],results[i+2],results[i+3],results[i+4],results[i+5],0),  new Date(results[i+6],results[i+7],results[i+8],results[i+9],results[i+10],0) ]);  
+            
+        }
+
+        
+        
+          
+        
+
+$.getJSON('/_find_van_schedule', {
+      the_van: "4"
+    }, function(data) {
+        
+        console.log(data.results);
+        results = data.results;
+        console.log(results.length);
+        
+        for (i=0; i<results.length; i+=12){
+            dataTable.addRow([ 'Van#4', results[i],results[i+11], new Date(results[i+1],results[i+2],results[i+3],results[i+4],results[i+5],0),  new Date(results[i+6],results[i+7],results[i+8],results[i+9],results[i+10],0) ]);  
+            
+        }
+
+        
+        
+        chart.draw(dataTable, options);  
+
+    });
+    });    });    });
+
+    
+
+
+    var options = {
+      tooltip: {isHtml: true},
+      timeline: { colorByRowLabel: true },
+      colors: ['FF99FF', 'A3D900', '87CEFA', 'f0f8ff'],
+      backgroundColor: '#ffd',
+
+
+      chartArea: {top: 30, left: 80, width: window.innerWidth || document.body.clientWidth, height: 500},
+      height: 500,
+      width: window.innerWidth || document.body.clientWidth,
+      
+      sizeAxis: {maxSize: 20}
+    };
+
+    
+    
+  }
+</script>
+
+
+<div id="vanTimelineDisplay" style="height: 60%;"></div>
+
+
+
+
+
+<!------------------For Van End------------------>
+
+
+
+
+
+
+
+
+<form name="vanAssignment" id="vanAssignment" action="sendVanNumtoDB" method=post>
+    <input type="hidden" name="van" id="" value="">
+    <input type="hidden" name="color" id="" value="">
+    <input type="hidden" class="form-control" name="my_id" value="" /> 
+    
+</form>
+</div>
+
+<div id="mapsection">
+<div class="col-md-6">
+
+{% if session.memos %}
+<table id="mytable" class="table table-bordered">
+   
+  {% for memo in session.memos %}
+  {% if memo.history == "current" %}
+
+  {% set memoid = memo.my_id|replace("0.","") %}
+
+  <div class="memo" id = "tr_id2{{memoid}}">
+  <div id = "van_id2{{memoid}}" class="{% if memo.van=="1" %}van1{% elif memo.van=="2" %}van2{% elif memo.van=="3" %}van3{% elif memo.van=="4" %}van4{% endif %}">
+    <script>
+    var theResult{{memoid}};
+    $.getJSON('/_return_record_from_db', {
+      the_id: "{{memo.my_id}}",
+      the_field: "time"
+    }, function(data) {
+      theResult = data.result;
+      document.getElementById("memo{{memoid}}.time2").innerHTML = "<h4>"+data.result['time']+"</h4>";
+      document.getElementById("memo{{memoid}}.riders2").innerHTML ="Riders: "+"<b>"+data.result['riders']+"</b>"; 
+      document.getElementById("memo{{memoid}}.pickup2").innerHTML ="Pickup: "+data.result['pickup']; 
+      document.getElementById("memo{{memoid}}.dropoff2").innerHTML ="Dropoff: "+data.result['dropoff']; 
+      document.getElementById("memo{{memoid}}.uoid2").innerHTML ="UOID: "+data.result['uoid']; 
+      document.getElementById("memo{{memoid}}.bike2").innerHTML ="Bike:"+data.result['bike']+"<br>"; 
+    });
+    </script>
+  <div class="row"><b>
+    <div class="col-md-2">
+      <div id = "memo{{memoid}}.time2" class="center"></div>  
+      <div id = "memo{{memoid}}.riders2"></div>
+    </div>
+
+    <div class="col-md-5">
+      <div id = "memo{{memoid}}.pickup2"></div>
+      <div id = "memo{{memoid}}.dropoff2"></div>
+      <div id = "memo{{memoid}}.uoid2"></div>
+    </div>
+
+    <div class="col-md-2">
+      <div id = "memo{{memoid}}.bike2"></div>
+    </div>
+
+    <div class="col-md-1">
+      <form action="" method=post>
+      <a href="javascript:void()" id= "find{{memoid}}" data-toggle="tooltip" title="Find Item"><button type="button" class="btn btn-primary">Find on Map</button></a>
+      <script>$(function() {
+      $('a#find{{memoid}}').bind('click', function() {
+      pickup{{memoid}}.openPopup();
+      return false;
+      });
+      });
+      </script>
+      </form>
+    </div>
+
+    <form action="" method=post>
+    <input type="hidden" class="form-control" name="my_id2{{memoid}}" value="{{ memoid }}" />
+    <input type="hidden" class="form-control" name="my_div2{{memoid}}" value="tr_id{{memoid}}" />
+    </form>
+
+  </b></div>
+  </div>
+{% endif %}
+{% endfor %}
+</table>
+{% endif %}
+
+</div>
+<div class="col-md-6">
+  <div data-spy="affix" data-offset-top="500">
+    <div id="mapid" style="width: 100%; height: 600px" ></div>
+  </div>
+</div>
+</div> <!-- mapsection-->
+</div> <!-- container -->
+
+
+
+
+
+
+<script>var vanstuff = document.getElementById('vanstuff');</script>
+  
+<script>var mapstuff = document.getElementById('mapsection');</script>
+
+
+</p>
+
+<div class="loggy"></div>
+
+</body>
+
+<script type="text/javascript">
+
+//van functions
+
+function vanFunction(docID,dbID,vanNum,ID){  
+  var x = document.getElementById("mytable").getElementsByTagName("td");
+  document.getElementById("vanAssignment").van.value = vanNum
+  document.getElementById("vanAssignment").my_id.value = dbID.toString();
+  document.forms["vanAssignment"].submit();
+}
+
+
+//map functions
+
+var seethru = 0.35;
+var opaque = 1;
+
+var tiles = L.tileLayer(
+'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2aWR6aW1tZXJseSIsImEiOiJjaWZ6dnF0cWQ2NWNjdTVrcTl5MGQ3MTlsIn0.al5p6-4MP-NkK3hM8o3Tkw'
+, {
+    maxZoom: 18,
+    attribution: 'SafeRide Boundaries',
+    id: 'mapbox.streets'
+});
+
+var VanG1 = new L.LayerGroup();
+var VanG2 = new L.LayerGroup();
+var VanG3 = new L.LayerGroup();
+var VanG4 = new L.LayerGroup();
+var VanG0 = new L.LayerGroup();
+
+var ColorIcon = L.Icon.extend({
+  options: {
+    shadowUrl: '../static/images/marker-shadow.png',
+    iconSize:     [25, 41],
+    shadowSize:   [41, 41],
+    iconAnchor:   [12, 40],
+    shadowAnchor: [12, 40],
+    popupAnchor:  [0, -45]
+  }
+});
+
+var greenIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-GREEN.png'}),
+    pinkIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-PINK.png'}),
+    aquaIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-AQUA.png'}),
+    whiteIcon = new ColorIcon({iconUrl: '../static/images/marker-icon-WHITE.png'});
+    defaultIcon = new ColorIcon({iconUrl: '../static/images/marker-icon.png'});
+
+var baseLayers = {
+    "Streets": tiles
+};
+
+var overlays = {
+    "Van 1": VanG1,
+    "Van 2": VanG2,
+    "Van 3": VanG3,
+    "Van 4": VanG4,
+    "No Van": VanG0
+};
+var mymap = L.map('mapid', {
+    center: [44.045, -123.075],
+    zoom:  13,
+    layers: [tiles, VanG0, VanG1, VanG2, VanG3, VanG4]
+    });
+L.control.layers(baseLayers, overlays).addTo(mymap);
+
+var path = L.polyline( [ [0,0] ] ).addTo(mymap);
+
+{% for memo in session.memos %}
+
+{% if memo.history == "current" %}
+
+  {% if (memo.platlong != None) and (memo.pickup != "??") %}
+
+  {% set memoid = memo.my_id|replace("0.","") %}
+
+  var pickup{{memoid}} = L.marker( {{memo.platlong}}, {opacity:seethru} )
+  {% if memo.van == "1" %}
+  pickup{{memoid}}.setIcon( pinkIcon ).bindPopup( "Van#1: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG1);
+  {% elif memo.van == "2" %}
+  pickup{{memoid}}.setIcon( greenIcon ).bindPopup( "Van#2: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG2);
+  {% elif memo.van == "3" %}
+  pickup{{memoid}}.setIcon( aquaIcon ).bindPopup( "Van#3: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG3);
+  {% elif memo.van == "4" %}
+  pickup{{memoid}}.setIcon( whiteIcon ).bindPopup( "Van#4: <b>Pickup:</b> Van#1: {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG4);
+  {% else %}
+  pickup{{memoid}}.bindPopup( "No Van Assigned: <b>Pickup:</b> {{memo.pickup}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG0);
+  {% endif %}
+
+
+  {% endif %}
+  {% if (memo.dlatlong != None) and (memo.dropoff != "??") %}
+
+  var dropoff{{memoid}} = L.marker( {{memo.dlatlong}}, {opacity:seethru} )
+  {% if memo.van == "1" %}
+  dropoff{{memoid}}.setIcon( pinkIcon ).bindPopup( "Van#1: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG1);
+  {% elif memo.van == "2" %}
+  dropoff{{memoid}}.setIcon( greenIcon ).bindPopup( "Van#2: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG2);
+  {% elif memo.van == "3" %}
+  dropoff{{memoid}}.setIcon( aquaIcon ).bindPopup( "Van#3: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG3);
+  {% elif memo.van == "4" %}
+  dropoff{{memoid}}.setIcon( whiteIcon ).bindPopup( "Van#4: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG4);
+  {% else %}
+  dropoff{{memoid}}.bindPopup( "No Van Assigned: <b>Dropoff:</b> {{memo.dropoff}} <br> <b>Time:</b>{{memo.time}}" ).addTo(VanG0);
+  {% endif %}
+
+  {% endif %}
+
+  {% if (memo.platlong != None) and (memo.pickup != "??") and (memo.dlatlong != None) and (memo.dropoff != "??") %}
+
+  pickup{{memoid}}.on('popupopen', function() {
+    pickup{{memoid}}.setOpacity(opaque);
+    dropoff{{memoid}}.setOpacity(opaque);
+    var latlngs = Array();
+    latlngs.push(pickup{{memoid}}.getLatLng());
+    latlngs.push(dropoff{{memoid}}.getLatLng());
+    path.setLatLngs( latlngs ).redraw();
+  });
+  pickup{{memoid}}.on('popupclose', function() {
+    pickup{{memoid}}.setOpacity(seethru);
+    dropoff{{memoid}}.setOpacity(seethru);
+    path.setLatLngs( [ [0,0] ] ).redraw();
+  });
+
+  dropoff{{memoid}}.on('popupopen', function() {
+    dropoff{{memoid}}.setOpacity(opaque);
+    pickup{{memoid}}.setOpacity(opaque);
+    var latlngs = Array();
+    latlngs.push(pickup{{memoid}}.getLatLng());
+    latlngs.push(dropoff{{memoid}}.getLatLng());
+    path.setLatLngs( latlngs ).redraw();
+  });
+  dropoff{{memoid}}.on('popupclose', function() {
+    dropoff{{memoid}}.setOpacity(seethru);
+    pickup{{memoid}}.setOpacity(seethru);
+    path.setLatLngs( [ [0,0] ] ).redraw();
+  });
+
+  {% endif %}
+
+
+{% endif %}
+{% endfor %}
+
+//var mymap = L.map('mapid').setView([44.045, -123.075], 12);
+
+
+//<!-- Div Hide/showing functions -->
+function showVans(){
+  ion.sound.play("snap");
+  $(memostuff).hide();
+  $(mapstuff).hide();
+  $(vanstuff).show();
+  drawChart();
+}
+function showMemos(){
+  ion.sound.play("snap");
+  $(memostuff).show();
+  $(mapstuff).hide();
+  $(vanstuff).hide();
+}
+function showMaps(){
+  ion.sound.play("snap");
+  $(memostuff).hide();
+  $(mapstuff).show();
+  $(vanstuff).hide();
+}
+
+// init bunch of sounds
+ion.sound({
+    sounds: [
+        {name: "snap"},
+        {name: "tap"},
+        {name: "button_click"}
+    ],
+
+    // main config
+    path: "static/sound/",
+    preload: true,
+    multiplay: true,
+    volume: 0.9
+});
+
+//console.log(results1);
+$(window).resize(function(){
+    drawChart();
+  });
+$(document).ready(function(){
+  
+  $(mapstuff).hide();
+  setInterval(updateEntry, 15000);
+  //setInterval(function(){ drawChart(); }, 3000);
+    
+
+});
+
+
+var newCount=0;
+
+
+function updateEntry(){
+newCount++;
+$.getJSON('/_get_a_new_entry', {
+      
+    }, function(data) {
+        if (data.result!=0){
+          
+          var memoid = data.result.id.slice(2,data.result.id.length);
+          var trid = "tr_id"+memoid;
+          var tpickup= "pickup"+memoid;
+          var tdropoff = "droppoff"+memoid;
+          var tvanid = "van_id"+memoid;
+          var tempID = data.result.id;
+          var tempUOID = data.result.uoid;
+          var tempCampus = data.result.oncampus
+          var tempPickup = data.result.pickup
+          var tempDropoff = data.result.dropoff
+          var tempName = data.result.name
+          var tempPhone = data.result.phone
+          var tempTime = data.result.time
+          var tempRiders = data.result.riders
+          var tempBike = data.result.bike
+          var tempComments = data.result.comments
+          var tvanid2 = "van_id2"+memoid;
+          var tvantext = "van_text"+memoid;
+          var tcampus = "campus"+memoid;
+          var tpickup = "pickup"+memoid;
+          var tdropoff = "dropoff"+memoid;
+          var thour = data.result.hour;
+          var tminute = data.result.minute;
+          var prefix = "#endofid";
+          var theDiv= prefix+memoid;
+          
+          $.get('/_find_next_id', {id:tempID,hour:thour,minute:tminute},function(data){
+            var temp = data.result;
+            if (temp=="0"){
+              //alert("we got back 0");
+              temp = "start";//?
+              theDiv = "#norecords";
+            }
+            else if (temp==memoid){
+              //alert("we same entry back as our input");
+              theDiv = "#norecords";//this is this beginning of after div (+id)
+
+            }
+            else if (temp=="#isbeforeall"){
+              theDiv = temp;
+            }
+            else
+            {
+              //alert(prefix+temp);
+              
+              theDiv=prefix+temp;
+              if (theDiv=="#endofid"){
+                theDiv = "#norecords";
+              }
+            }
+            //prefix = "#beforeid"; //this is this beginning of before div (+id)
+            try{
+            $( theDiv ).append('<div id="tr_id'+memoid+'"><div id="van_id'+memoid+'"><b><div class="row"><div class="col-md-1"> <div class="center"><h4>'+tempTime+'</h4></div></div><div class="col-md-3"><div>Pickup:'+tempPickup+'</div><div>Dropoff:'+tempDropoff+'</div></div><div class="col-md-1"><div>Bike:'+tempBike+'</div></div><div class="col-md-2"><div>Name:'+tempName+'</div><div>Comments:'+tempComments+'</div></div><div class="col-md-2"><div>'+tempPhone+'</div><div>'+tempUOID+'</div></div><div class="col-md-3"></div></div> <div class="row"><div class="col-md-1"><div align="center">Riders:'+tempRiders+'</div></div><div class="col-md-1"><button type="button" class="btn btn-primary" onclick="putHistory(\''+tempID+'\',\''+trid+'\',\''+tpickup+'\', \''+tdropoff+'\')" data-toggle="tooltip" title="Put this record into nightly history">To History </button></div>  <div class="col-md-1"> <form action="editrecord" method=post><input type="hidden" class="form-control" name="my_id" value="'+tempID+'" /><input type="submit" value="Edit" class="btn btn-primary" data-toggle="tooltip" title="Edit this record"/>    </form>  </div><div class="col-md-1"><div id='+tcampus+'></div> <script>    if ('+tempCampus+'=="true"){     '+tcampus+'.innerHTML="On Campus";           $("#'+tcampus+'").attr("class", "oncampus");    }    else{     '+tcampus+'.innerHTML="Off Campus";     $("#'+tcampus+'").attr("class", "offcampus");    }  <\/script></div> <div class="col-md-1"><button type="button" class="btn btn-primaryVan1" data-toggle="tooltip" onclick="assignVanN(1,'+tempID+','+tvanid+')" title="Assign Van#1 to this pickup">Van#1</button> </div> <div class="col-md-1"><button type="button" class="btn btn-primaryVan2" data-toggle="tooltip" onclick="assignVanN(2,'+tempID+','+tvanid+')" title="Assign Van#2 to this pickup">Van#2</button> </div><div class="col-md-1"><button type="button" class="btn btn-primaryVan3" data-toggle="tooltip" onclick="assignVanN(3,'+tempID+','+tvanid+')" title="Assign Van#3 to this pickup">Van#3</button> </div><div class="col-md-1"><button type="button" class="btn btn-primaryVan4" data-toggle="tooltip" onclick="assignVanN(4,'+tempID+','+tvanid+')" title="Assign Van#4 to this pickup">Van#4</button> </div><div class="col-md-1"><button type="button" class="btn btn-danger" data-toggle="tooltip" onclick="assignVanN(0,'+tempID+','+tvanid+')" title="Cancel this assignment">Cancel Van</button> </div>   <div class="col-md-2"><button type="button" class="btn btn-danger" data-toggle="tooltip" title="Delete this request" onclick="deleteRecord(\''+tempID+'\',\''+trid+'\',\''+tpickup+'\', \''+tdropoff+'\')">Delete </button></a></div>  </div>  <hr></div><br></div><div id="endofid'+memoid+'"></div>');
+            }
+            catch(err){
+              //alert("error!!!");
+            }
+            });
+            if(theDiv!="#norecords"){
+              $(theDiv).attr("id","newId");
+              $("tr_id"+memoid).append('<div id="endofid'+memoid+'"></div>');
+            }
+        }//endif
+
+        
+
+      if (data.result!=0){
+        var pickup{{memoid}} = L.marker( data.result.platlong, {opacity:seethru} );
+        pickup{{memoid}}.bindPopup( "No Van Assigned: <b>Pickup:</b>"+ data.result.pickup +"<br> <b>Time:</b>"+data.result.time ).addTo(VanG0);
+        var dropoff{{memoid}} = L.marker( data.result.dlatlong, {opacity:seethru} );
+        dropoff{{memoid}}.bindPopup( "No Van Assigned: <b>Pickup:</b>"+ data.result.pickup +"<br> <b>Time:</b>"+data.result.time ).addTo(VanG0);
+
+        console.log( {{memoid}} );
+
+        pickup{{memoid}}.on('popupopen', function() {
+          pickup{{memoid}}.setOpacity(opaque);
+          dropoff{{memoid}}.setOpacity(opaque);
+          var latlngs = Array();
+          latlngs.push(pickup{{memoid}}.getLatLng());
+          latlngs.push(dropoff{{memoid}}.getLatLng());
+          path.setLatLngs( latlngs ).redraw();
+        });
+        pickup{{memoid}}.on('popupclose', function() {
+          pickup{{memoid}}.setOpacity(seethru);
+          dropoff{{memoid}}.setOpacity(seethru);
+          path.setLatLngs( [ [0,0] ] ).redraw();
+        });
+
+        dropoff{{memoid}}.on('popupopen', function() {
+          dropoff{{memoid}}.setOpacity(opaque);
+          pickup{{memoid}}.setOpacity(opaque);
+          var latlngs = Array();
+          latlngs.push(pickup{{memoid}}.getLatLng());
+          latlngs.push(dropoff{{memoid}}.getLatLng());
+          path.setLatLngs( latlngs ).redraw();
+        });
+        dropoff{{memoid}}.on('popupclose', function() {
+          dropoff{{memoid}}.setOpacity(seethru);
+          pickup{{memoid}}.setOpacity(seethru);
+          path.setLatLngs( [ [0,0] ] ).redraw();
+        });
+       }
+
+        //+'</div><div class="col-md-2"><div class="center">'+data.result.phone+'</div><div class="center">'+data.result.uoid+'</div></div> </div> <div class="row"><div class="col-md-1"><div class="center">Riders:'+data.result.riders+'</div></div> </div>');
+
+          //need to find proper place for it here.
+
+        //$( "div:contains(data.result.time)" ).append("<div id='new1' class='row'>1111111111111111111</div>");
+     });
+
+
+}
+
+
+function sendText(number, name, message){
+  $.get('_text_message',{the_number:number, name:name, the_message:message},function(data){ion.sound.play("tap");});
+}
+
+
+
+function findNext(id){
+    //alert("van_id:"+van_id_div);
+      var temp = ""
+      $.get('/_modify_db', {the_id:id,the_field: "van", new_stuff: van},function(data){temp = data.result});
+      return temp;
+  
+}
+
+
+
+function assignVan(van, id, van_id_div, van_id2_div, van_text_div){
+    //alert("van_id:"+van_id_div);
+    ion.sound.play("snap");
+    if (van!=0){
+      $.get('/_modify_db', {the_id:id,the_field: "van", new_stuff: van});
+      
+        document.getElementById(van_id_div).className = "van"+van;
+        document.getElementById(van_id2_div).className = "van"+van;
+        document.getElementById(van_text_div).innerHTML = "Van #"+van+" Assigned";
+      
+    }
+    else{
+    $.get('/_modify_db', {the_id:id,the_field: "van", new_stuff: ""});
+    document.getElementById(van_id_div).className = "";
+    document.getElementById(van_id2_div).className = "";
+    document.getElementById(van_text_div).innerHTML = "";
+    }
+
+  
+
+}
+
+function assignVanN(van,id,van_id_div){//van, id, van_id_div, van_id2_div, van_text_div){
+    //alert("new van_id:"+van_id_div);
+    ion.sound.play("snap");
+    if (van!=0){
+      $.get('/_modify_db', {the_id:id,the_field: "van", new_stuff: van});
+      
+          var newClass = "van"+van;
+          $(van_id_div).attr('class', newClass);
+          //$("#"+van_id2_div).attr('class', "van"+van);
+          //$("#"+van_text_div).val() = "Van #"+van+" Assigned";
+        
+    }
+    else{
+    $.get('/_modify_db', {the_id:id,the_field: "van", new_stuff: ""});
+        $(van_id_div).attr('class', "");
+          //$("#"+van_id2_div).attr('class', "");
+          //$("#"+van_text_div).val() = "";
+      }
+
+  
+
+}
+
+
+
+
+function deleteRecord(id,div2,div3,p_map,d_map){
+  
+  ion.sound.play("button_click");
+  $.get('/_delete_record', {the_id:id});
+  document.getElementById(div2).innerHTML ="";
+  //document.getElementById(div3).innerHTML ="";
+  mymap.removeLayer(p_map);
+  mymap.removeLayer(d_map);  
+}
+
+function putHistory(id,div2,div3,p_map,d_map){
+  
+  ion.sound.play("button_click");
+  $.get('/_modify_db', {the_id: id, the_field: "history",new_stuff: "old"});
+  
+  document.getElementById(div2).innerHTML ="";
+  //document.getElementById(div3).innerHTML ="";
+  
+  mymap.removeLayer(p_map);
+  mymap.removeLayer(d_map);  
+}
+
+
+
+</script>
+
+
+</html>

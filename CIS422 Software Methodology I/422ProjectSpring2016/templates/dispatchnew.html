@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>SafeRide - Enter new Rider Info</title>
+
+  <!-- 'viewport' is used by bootstrap to respond to device size -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Javascript:  JQuery from a content distribution network (CDN) -->
+  <script
+     src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+  </script>
+
+  <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+  <link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+</script>
+
+   <!-- Our own style sheet -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/memos.css') }}" />
+
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="icon" href="/images/favicon.ico?" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='apple-touch-icon-57x57.png')}}">
+<link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='apple-touch-icon-60x60.png')}}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='apple-touch-icon-72x72.png')}}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='apple-touch-icon-76x76.png')}}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='apple-touch-icon-114x114.png')}}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='apple-touch-icon-120x120.png')}}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-touch-icon-144x144.png')}}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-touch-icon-152x152.png')}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon-180x180.png')}}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png')}}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='android-chrome-192x192.png')}}" sizes="192x192">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-96x96.png')}}" sizes="96x96">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-16x16.png')}}" sizes="16x16">
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json')}}">
+<link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg')}}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="{{ url_for('static', filename='mstile-144x144.png')}}">
+<meta name="theme-color" content="#ffffff">
+
+<script type="text/javascript" src="static/input-mask.js"></script>
+
+</head>
+<body onload="onLoad()">
+<div class="container" style="color: #2F3062">
+<img src="static/saferide_banner.png" class="img-responsive">
+<b><ul class="nav nav-tabs">
+  <li><a href="dispatch" data-toggle="tooltip" title="Home page of SafeRide schedule">Home</a></li>
+  <!--<li><a href="testd" data-toggle="tooltip" title="Deletes all entries from database">Delete All</a></li>-->
+  <li class="active"><a href="dispatchnew" data-toggle="tooltip" title="New request from phone call">Insert New Entry</a></li>
+  <li><a href="dhistory" data-toggle="tooltip" title="History of finished requests">History</a></li>
+  <li><a href="dtallies" data-toggle="tooltip" title="Generate tallies">Tallies</a></li>
+  <li><a href="logout" data-toggle="tooltip" title="Logout the current account">Logout</a></li>
+</ul>
+</b>
+
+  <div class="row">
+    <div class="col-md-12"><table class="table table-striped"><tr><td class="td.a"><p class="h3">
+
+ Manual Entry of New Rider Info: </p></td></tr></table></div></div>
+
+<br>
+
+
+
+<form action="dcreate2" method=post>
+
+<div class="row">
+  <div class= "col-md-2">
+    <p>Full name: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="name" required placeholder="Your name" onfocus="if (this.value=='Your name') this.value='';"/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+     <p>Phone Number: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" onkeydown='return (event.which >= 37 && event.which <= 40) || (event.which >= 48 && event.which <= 57) || (event.which >= 96 && event.which <= 105) || event.which == 8 || event.which == 9 || event.which == 46' class="form-control" name="phone" required id="phone" maxlength="13" placeholder="Phone: (999) 999-9999" onfocus="if (this.value=='Phone: (999) 999-9999') this.value='';"/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+     <p>UOID: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" onkeydown='return (event.which >= 37 && event.which <= 40) || (event.which >= 48 && event.which <= 57) || (event.which >= 96 && event.which <= 105) || event.which == 8 || event.which == 9 || event.which == 46' class="form-control" name="uoid" required id="uoid" maxlength="9" placeholder="UOID: 999-99-9999" onfocus="if (this.value=='UOID: 999-99-9999') this.value='';"/>
+  </div>
+
+  <div class="col-md-4">
+      Riders:
+        <div class="radio-inline">
+          <label><input type="radio" value="1" checked name="optradio">1</label>
+        </div>
+        <div class="radio-inline">
+          <label><input type="radio" value="2" name="optradio">2</label>
+        </div>
+        <div class="radio-inline">
+          <label><input type="radio" value="3" name="optradio">3</label>
+        </div>
+      </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Pick-up Time: </p>
+  </div>
+
+  <div class="col-md-2">
+    <select class="form-control" name="time_hours">
+      <option>6 PM</option>
+      <option>7 PM</option>
+      <option>8 PM</option>
+      <option>9 PM</option>
+      <option>10 PM</option>
+      <option>11 PM</option>
+      <option>12 AM</option>
+      <option>1 AM</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <select class="form-control" name="time_minutes">
+      <option>00</option>
+      <option>05</option>
+      <option>10</option>
+      <option>15</option>
+      <option>20</option>
+      <option>25</option>
+      <option>30</option>
+      <option>35</option>
+      <option>40</option>
+      <option>45</option>
+      <option>50</option>
+      <option>55</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-2">
+      <div class="checkbox">
+      <label><input type="checkbox" value="true" name="bike">Bicycle Request</label>
+      <input type="hidden" value="false" name="bike">
+      </div>
+  </div>
+
+
+
+
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Pick-up Location: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="pickup" required placeholder="Where shall I pick you up" onfocus="if (this.value=='Where shall I pick you up') this.value='';"/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Dropoff Location: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="dropoff" required placeholder="Where shall I drop you off" onfocus="if (this.value=='Where shall I drop you off') this.value='';"/>
+  </div>
+  <div class="col-md-2">
+    <input type="submit" class="btn btn-primary" data-toggle="tooltip" title="Submit your ride request" value="Submit Request" />
+  </div>  
+  <div class="col-md-1">
+  <a href="dispatch" ><button type="button" id="Cancel" class="btn btn-primary" data-toggle="tooltip" title="Cancel this request">Cancel Request</button></a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <p>Notes: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="comments" placeholder="Notes & Comments" onfocus="if (this.value=='Notes & Comments') this.value='';"/>
+  </div>
+</div>
+
+</form>
+
+</div>
+
+
+</div>
+</body>
+
+<script type="text/javascript">
+function onLoad() {
+  
+      new InputMask().Initialize(document.querySelectorAll("#uoid"),
+      {
+        mask: InputMaskDefaultMask.Ssn, 
+        placeHolder: "UOID: 999-99-9999" 
+      });
+      
+         
+      
+      new InputMask().Initialize(document.querySelectorAll("#phone"),
+      {
+        mask: InputMaskDefaultMask.Phone, 
+        placeHolder: "Phone: (999) 999-9999"
+      });
+
+    
+}
+ 
+
+</script>
+
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset=utf-8" />
+		<title>Beverage Oracle V3</title>
+		<script>
+		function getBeverage(temp){
+		var temp = parseFloat(temp);
+		if ((temp >= 32) && (temp <= 80))
+		return "Perrier!";
+		else if (temp < 32)
+		return "Lattes!"
+		else
+		return "Slushy!"
+		}
+		</script>
+		</head>
+		<body>
+		<h2><img src="../images/slushocity.jpg"> Ask the Beverage Oracle V3 </h2>
+		<h3>Rule:</h3>
+		<pre>
+
+
+		   	 __
+			|
+			|  Perrier!, 32 <= temp <= 80
+getBeverage(temp) =   <    Lattes!, temp < 32
+			|  Slushies!, temp &gt; 80
+			|__
+		</pre>
+		<br>
+		Enter Temperature:
+		<input type='text' id='inBox' size='8'>
+		<button
+		onclick="document.getElementById('outBox').value = getBeverage(document.getElementById('inBox').value)">
+			Ask the Oracle =>
+		</button>
+		<input type='text' id='outBox' size='8' >
+
+		</body>
+		</html>

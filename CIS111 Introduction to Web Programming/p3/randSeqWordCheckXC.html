@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>Random Sequence Word Checker</title>
+		<script src="../js/three-letter-words.js"></script>
+		<script src="../js/random.js"></script>
+		<script>
+			function isWord(w) {
+				var w = w.toLowerCase();
+				if (threeLtrWordsDictionary.toLowerCase().search(w) != -1)
+					return true;
+				else
+					return false;
+			}
+
+			function generateSequence() {
+				var sequence = RandomChar('abcdefghijklmnopqrstuvwxyz') + RandomChar('abcdefghijklmnopqrstuvwxyz') + RandomChar('abcdefghijklmnopqrstuvwxyz');
+				return sequence;
+
+			}
+
+			function $(idStr) {
+				return document.getElementById(idStr);
+
+			}
+
+			function driver() {
+				//generate random 3-char sequence
+				var seq = generateSequence();
+				//output seq to seqDiv
+				$('seqDiv').innerHTML = generateSequence();
+
+				//add 1 to the number in seqCountDiv
+				$('seqCountDiv').innerHTML = parseInt($('seqCountDiv').innerHTML) + 1;
+				
+				//Percentage of Sequences that are words
+				$('percentageSeqDiv').innerHTML = Math.round((parseInt($('wordCountDiv').innerHTML))/parseInt($('seqCountDiv').innerHTML)*100);
+
+
+				//is seq a word?
+				if (isWord(seq))
+				//output true to wordDiv
+				{
+					$('wordDiv').innerHTML = true;
+					//add 1 to number in wordCountDiv
+					$('wordCountDiv').innerHTML = parseInt($('wordCountDiv').innerHTML) + 1;
+				}
+				//output false to wordDiv
+
+				else
+					$('wordDiv').innerHTML = false;
+			}
+		</script>
+	</head>
+	<body>
+		<img src="../images/words.jpg" width="250" style="margin:.5em;padding:.3em; border:thin solid; " >
+		<h2 style="clear: both">Random Sequence Word Check</h2>
+
+		<h3 style="clear:both;">&nbsp;</h3>
+		<input type="button" value="Generate & Test 3-Letter Seq."
+		onclick="driver();">
+
+		<h3 style="clear:both;">Random 3-Letter Sequence</h3>
+		<div id = "seqDiv">
+			&nbsp;
+		</div>
+
+		<h3 style="clear:both;">Valid Word?</h3>
+		<div id = "wordDiv">
+			&nbsp;
+		</div>
+
+		<h3 style="clear:both;">Number of Sequences</h3>
+		<div id = "seqCountDiv">
+			0
+		</div>
+
+		<h3 style="clear:both;">Number of Words</h3>
+		<div id = "wordCountDiv">
+			0
+		</div>
+		
+		<h3 style="clear:both;">Percentage of Sequences That Are Words</h3>
+		<div id = "percentageSeqDiv">
+			0
+		</div>
+
+
+	</body>
+</html>

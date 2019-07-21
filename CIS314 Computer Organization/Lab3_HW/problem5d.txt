@@ -1,0 +1,98 @@
+/* problem5d.txt
+ * 
+ * CIS_314 Lab 3 
+ * Fall 2015
+ * Haomin He 
+ * 
+ * to emulate a Direct Mapped Cache
+*/
+
+
+/* 5. Perform first 10 cache references with the given address trace and:
+*    a. Display the number of hits and the hit rate <Outputs 1> 
+*    b. Display the number of misses and the miss rate <Outputs 2> 
+*    c. Display current cache state with proper formatting <Output 3> 
+*    d. Is the output as expected? Open up ¡°address.txt¡± and manually write out the
+*       number of hits, the number of misses, hit rate, miss rate and final cache state
+*       for the 1st 10 addresses. Save that information in ¡°problem5d.txt¡± 
+*/
+Read 10 hex values:
+
+Number of hits: 7
+Number of misses: 3
+Hit Rate: 0.700000
+Miss Rate: 0.300000
+
+<Cache State>:
+Index      Tag               Valid         Data
+Index: 0   Tag: 0     Valid: 1      Data: MEM[0] : MEM[F]
+Index: 1   Tag: 0     Valid: 0      Data: MEM[0] : MEM[F]
+Index: 2   Tag: 0     Valid: 0      Data: MEM[0] : MEM[F]
+Index: 3   Tag: 0     Valid: 1      Data: MEM[30] : MEM[3F]
+Index: 4   Tag: 0     Valid: 0      Data: MEM[0] : MEM[F]
+Index: 5   Tag: 0     Valid: 1      Data: MEM[50] : MEM[5F]
+Index: 6   Tag: 0     Valid: 0      Data: MEM[0] : MEM[F]
+Index: 7   Tag: 0     Valid: 0      Data: MEM[0] : MEM[F]
+
+d. Is the output as expected? Yes, it is as expected.
+Number of hits: 7
+Number of misses: 3
+Hit Rate: 0.7
+Miss Rate: 0.3
+<Cache State>:
+Index      Tag               Valid         Data
+Index: 0   Tag: 0     Valid: 1      Data: MEM[0] : MEM[F]
+Index: 1   Tag: 0     Valid: 0      ----------------------
+Index: 2   Tag: 0     Valid: 0      ----------------------
+Index: 3   Tag: 0     Valid: 1      Data: MEM[30] : MEM[3F]
+Index: 4   Tag: 0     Valid: 0      ----------------------
+Index: 5   Tag: 0     Valid: 1      Data: MEM[50] : MEM[5F]
+Index: 6   Tag: 0     Valid: 0      ----------------------
+Index: 7   Tag: 0     Valid: 0      ----------------------
+
+
+
+
+
+
+/* 6. Perform a complete cache run with the given address trace and:
+*    a. Display the number of hits and the hit rate <Outputs 4> 
+*    b. Display the number of misses and the miss rate <Outputs 5> 
+*    c. Final cache state with proper formatting <Output 6> 
+*/
+Read 500 hex values:
+
+Number of hits: 357
+Number of misses: 143
+Hit Rate: 0.714000
+Miss Rate: 0.286000
+
+<Cache State>:
+Index      Tag               Valid         Data
+Index: 0   Tag: 1A060     Valid: 1      Data: MEM[D03000] : MEM[D0300F]
+Index: 1   Tag: 141C0     Valid: 1      Data: MEM[A0E010] : MEM[A0E01F]
+Index: 2   Tag: 141C0     Valid: 1      Data: MEM[A0E020] : MEM[A0E02F]
+Index: 3   Tag: 141C0     Valid: 1      Data: MEM[A0E030] : MEM[A0E03F]
+Index: 4   Tag: 1A060     Valid: 1      Data: MEM[D03040] : MEM[D0304F]
+Index: 5   Tag: 141C0     Valid: 1      Data: MEM[A0E050] : MEM[A0E05F]
+Index: 6   Tag: 1A060     Valid: 1      Data: MEM[D03060] : MEM[D0306F]
+Index: 7   Tag: 1A060     Valid: 1      Data: MEM[D03070] : MEM[D0307F]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

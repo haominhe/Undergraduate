@@ -1,0 +1,156 @@
+/*
+ * SafeRide  
+ *    Styles for 'saferide' go in this file 
+ *
+ * For Future: use preprocessor for css files such as less or sass
+ * to properly customize bootstrap buttons
+ */
+
+/* Nothing yet */
+
+body {
+    background-color: #ffd48a; 
+    font-family:sans-serif;
+}
+
+h1 {
+    color: #2f3062;
+    text-align: center;
+}
+
+h2{
+    font-size: 14pt;
+    font-style: bold;
+}
+
+
+h3{
+    background: #4679BD;
+    font-size: 14pt;
+}
+
+h4{
+    font-size:40px;
+}
+td.a {
+	border-style:dotted;
+	border-width:3px;
+	border-color:#000000; 
+	padding: 10px;
+}
+td.b {
+	border-style:solid;
+	border-width:3px;
+	border-color:#333333;
+	padding:10px;
+}
+
+p {
+    color: #2f3062;
+    font-size: 14pt;
+}
+
+.lyrics {
+    margin-left: 3em;
+    font-style: italic;
+}
+
+.attribution  {
+    font-size: smaller;
+}
+
+.center {
+    text-align: center;
+}
+
+.oncampus{
+    color: #41A220;
+    background: black;
+    font-weight: bold;
+}
+
+.offcampus{
+    color: #D52637;
+    background: black;
+    font-weight: bold;
+}
+
+.btn-primaryoncampus{
+    color: #41A220;
+    background: black;
+    font-weight: bold;
+}
+
+.btn-primaryoffcampus{
+    color: #D52637;
+    background: black;
+    font-weight: bold;
+}
+
+
+.btn-primaryVan1 {
+    background: #FF99FF;/* pink */
+    color: #333;
+   
+}
+
+.btn-primaryVan2 {
+    background: #A3D900;/* green */
+    color: #333;
+
+
+}
+.btn-primaryVan3 {
+    background: #87CEFA;/* blue */
+    color: #333;
+ 
+  
+}
+.btn-primaryVan4 {
+    background: #f0f8ff;/* white */
+    color: #333;
+
+ 
+}
+
+.this-term{
+    border: 5px solid red;
+    text-align: center;
+
+}
+
+.bike{
+    background-image: url("bike.png");
+}
+
+
+.van1 {
+    background-color:#FF99FF;/* pink */
+    color:#333;
+    border-radius: 25px;
+    padding: 2px; 
+}
+
+.van2 {
+    background-color:#A3D900;/* green */
+    color:#333;
+    border-radius: 25px;
+    padding: 2px; 
+}
+.van3 {
+    background-color:#87CEFA;/* blue */
+    color:#333;
+    border-radius: 25px;
+    padding: 2px; 
+}
+.van4 {
+    background-color:#f0f8ff;/* white */
+    color:#333;
+    border-radius: 25px;
+    padding: 2px; 
+}
+
+.divScroll {
+    overflow-y: scroll;
+    height: 600px;
+}

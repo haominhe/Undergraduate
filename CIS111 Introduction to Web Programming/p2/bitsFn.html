@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- bits.html                                Haomin He -->
+<!-- Web page that rounds a value to one decimal place.  -->
+<!-- =================================================== -->
+
+<html>
+ <head>
+   <title> No.of Bits => No. of Patterns </title>
+   <script type="text/javascript">
+   	function MathPow()
+   	// Assumes: Raise 2 to the power of n
+   	// Results: Get the n-th power of 2
+   	{
+   		var N = parseFloat(document.getElementById('numberBox').value);
+                   bits=Math.pow(2,N);
+                   document.getElementById('outputDiv').innerHTML=
+                       '<big><b>Number of Distinct Binary Patterns of Length N </b></big><br>' + bits;
+   	}
+   </script>
+ </head>
+
+ <body>
+   <h2>No. of Bits => No. of Patterns</h2>
+   <p>
+     Enter N, the length of your binary patterns: <input type="text" id="numberBox" size=12  value>
+   </p>   
+   <button type="button"
+          onclick="MathPow();" >
+                   2<sup>n</sup>
+                   </button>
+   <hr>
+   <div id="outputDiv"></div>
+ </body>
+</html>

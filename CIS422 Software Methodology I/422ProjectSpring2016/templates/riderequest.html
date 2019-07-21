@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>SafeRide!</title>
+
+  <!-- 'viewport' is used by bootstrap to respond to device size -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Javascript:  JQuery from a content distribution network (CDN) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+  <link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+   </script>
+  <script src="static/geojson-utils.js"></script>
+
+
+<!-- Our own style sheet -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/memos.css') }}" />
+<script src="static/requestConfig.js"></script>
+<script src="static/ion.sound.js"></script>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="icon" href="/images/favicon.ico?" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='apple-touch-icon-57x57.png')}}">
+<link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='apple-touch-icon-60x60.png')}}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='apple-touch-icon-72x72.png')}}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='apple-touch-icon-76x76.png')}}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='apple-touch-icon-114x114.png')}}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='apple-touch-icon-120x120.png')}}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-touch-icon-144x144.png')}}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-touch-icon-152x152.png')}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon-180x180.png')}}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png')}}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='android-chrome-192x192.png')}}" sizes="192x192">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-96x96.png')}}" sizes="96x96">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-16x16.png')}}" sizes="16x16">
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json')}}">
+<link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg')}}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="{{ url_for('static', filename='mstile-144x144.png')}}">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<script type="text/javascript" src="static/input-mask.js"></script>
+
+</head>
+<body onload="onLoad()" style="align:text-center">
+<div class="container">
+
+<!-- Flashed messages before content -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<img src="static/saferide_banner.png" class="img-responsive">
+<!-- container -->
+
+<div style="margin:0 auto;width:75%;text-align:left">
+<form name="request" onsubmit="return validateForm()" action="create2" method=post>
+
+<div class="row">
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" name="name" required id="name" placeholder="Your name" onfocus="if (this.value=='Your name') this.value='';"/>
+  </div>
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" onkeydown='return (event.which >= 37 && event.which <= 40) || (event.which >= 48 && event.which <= 57) || (event.which >= 96 && event.which <= 105) || event.which == 8 || event.which == 9 || event.which == 46' class="form-control" name="phone" required id="phone" maxlength="10" placeholder="Phone: (999) 999-9999"/>
+    
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" onkeydown='return (event.which >= 37 && event.which <= 40) || (event.which >= 48 && event.which <= 57) || (event.which >= 96 && event.which <= 105) || event.which == 8 || event.which == 9 || event.which == 46' class="form-control" name="uoid" required id="uoid" maxlength="9" placeholder="UOID: 999-99-9999"/>
+  </div>
+    <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" name="comments" id="comments" placeholder="{% if session.rememberme=="true" %}{{session.comments}}{% else %}Notes & Comments{% endif %}" onfocus="if (this.value=='Notes & Comments') this.value='';"/>
+  </div>
+
+</div>
+
+<div class="row">
+<h2> Today is {{session.today}}, and it is {{session.term}} term.  Hours of Operation are {{session.todayopen}}:00PM until {{session.todayclose}}:00AM</h2>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+     <p>Pick-up Time (TONIGHT): </p>
+  </div>
+  
+<div class="col-xs-6 col-sm-6">
+  <table>
+    <tr>
+    <!-- <input type="text" class="form-control" name="time" value="time"/>  -->
+    <td>
+    <select class="form-control" name="time_hours" id="time_hours">
+      <!-- we populate the time from the current term data -->
+      <!-- only difference is opening times in terms, closing times on days -->
+      {% if session.term=='fall' or session.term=='winter' %}
+      <option>6  PM</option>
+      <option>7  PM</option>
+      <option>8  PM</option>
+      
+      {% elif session.term=='spring' %}
+      <option>7  PM</option>
+      <option>8  PM</option>
+      
+      {% endif %}
+
+      <option>9  PM</option>
+      <option>10 PM</option>
+      <option>11 PM</option>
+      
+      {% if session.today=='Fri' or session.today=='Sat' %}
+      <option>12 AM</option>
+      <option>1  AM</option>
+      {% endif %}
+    </select> 
+    </td>
+
+    <td>
+    <select class="form-control" name="time_minutes" id="time_minutes">
+      <option>00</option>
+      <option>05</option>
+      <option>10</option>
+      <option>15</option>
+      <option>20</option>
+      <option>25</option>
+      <option>30</option>
+      <option>35</option>
+      <option>40</option>
+      <option>45</option>
+      <option>50</option>
+      <option>55</option>
+    </select> 
+    </td>
+  
+  </tr>
+  </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+      <p>Riders:  
+        &nbsp &nbsp
+          <label><input type="radio" value="1" checked name="optradio" id="riders">1</label>
+        &nbsp        
+          <label><input type="radio" value="2" name="optradio" id="riders">2</label>
+        &nbsp        
+          <label><input type="radio" value="3" name="optradio" id="riders">3</label>
+      </p>
+      </div>
+  
+      <div class="col-md-2">
+      <div class="checkbox active">
+      <label><input type="checkbox" value="true" name="bike" id="bike"
+
+      {% if session.rememberme=="true" %}
+      {% if session.bike=="true" %}
+          checked="dlkfj"
+      {% endif %}{% endif %}
+      ><p>Bicycle Request</p></label>
+      <input type="hidden" value="false" name="bike">
+      </div>
+      </div>
+
+    <div class="col-md-1">
+      <div class="checkbox">
+      <label><input type="checkbox" value="true" name="rememberme" id="rememberme"
+      {% if session.rememberme=="true" %}
+          checked="dlkfj"
+      {% endif %}><p>Remember Me</p></label>
+      <input type="hidden" value="No" name="rememberme">
+      </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-8 col-sm-4" id="locationField">
+    <input type="text" class="form-control" name="pickup" required id="pickup" placeholder="Where to pick you up" ></input>
+  </div>
+
+
+
+  <div class="col-md-1">
+  <button type="button" id="Find" class="btn btn-primary" data-toggle="tooltip" title="Find your current location" onclick="findaddress()">Find My Address</button>
+          <p id="demo"></p>
+    </div>
+</div>
+<div class="row">
+  
+
+  <div class="col-xs-8 col-sm-4">
+    <input type="text" class="form-control" name="dropoff" required id="dropoff" placeholder="Where to drop you off" onfocus="if (this.value=='Where to drop you off') this.value='';"/>
+  </div>
+  
+
+<div class="col-md-2">
+    <input type="submit" class="btn btn-primary" data-toggle="tooltip" title="Submit your ride request" value="Submit Request" />
+  </div>
+</div>
+
+</form>
+</div>
+
+<form name="requestAddress1" id="requestAddress1">
+  <input type="hidden" name="lat" id="lat1" value="hello">
+  <input type="hidden" name="longi" id="longi1" value="101">
+
+</form>
+
+</body>
+
+<script type="text/javascript">
+
+
+{% if session.rememberme=="true" %}
+
+document.getElementById('uoid').value = "{{session.uoid|formatUOID}}";
+document.getElementById('name').value = "{{session.name}}";
+document.getElementById('phone').value = "{{session.phone}}";
+document.getElementById('pickup').value = "{{session.pickup}}";
+document.getElementById('dropoff').value = "{{session.dropoff}}";
+
+{% endif %}
+
+
+function onLoad() {
+  
+      new InputMask().Initialize(document.querySelectorAll("#uoid"),
+      {
+        mask: InputMaskDefaultMask.Ssn, 
+        placeHolder: "UOID: 999-99-9999" 
+      });
+      
+         
+      
+      new InputMask().Initialize(document.querySelectorAll("#phone"),
+      {
+        mask: InputMaskDefaultMask.Phone, 
+        placeHolder: "Phone: (999) 999-9999"
+      });
+
+    
+}
+
+
+var placeSearch, autocomplete, autocomplete2;
+
+function initAutocomplete() {
+  autocomplete = new google.maps.places.Autocomplete(
+                                 (document.getElementById('pickup')),
+                                 {types: ['geocode']});
+  autocomplete2 = new google.maps.places.Autocomplete(
+                                 (document.getElementById('dropoff')),
+                                 {types: ['geocode']});
+
+    // Create the autocomplete object, restricting the search
+    // to geographical location types.
+
+    var geolocation = {
+      lat: 44.044600,//saferide home coordinates
+      lng: -123.073837
+    };
+    var circle = new google.maps.Circle({
+      center: geolocation,
+      radius: 5000//meters, about 3 miles
+    });
+    autocomplete.setBounds(circle.getBounds());
+    autocomplete2.setBounds(circle.getBounds());
+
+}
+
+// init bunch of sounds
+ion.sound({
+    sounds: [
+
+        {name: "button_click"}
+    ],
+
+    // main config
+    path: "static/sound/",
+    preload: true,
+    multiplay: true,
+    volume: 0.9
+});
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7UxEWiniVER3jS3MJpdp0FMhlIKaNccA&libraries=places&callback=initAutocomplete" async defer> </script>
+</html>

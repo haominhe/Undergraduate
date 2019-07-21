@@ -1,0 +1,56 @@
+After a particularly bad internal incident, the Zombie Observation and Outbreak Management (ZOOM) Taskforce is interested in software to verify zombie containment. The software will read a file representing a floor plan, the starting coordinates for the zombie, and some target coordinates. If the zombie can get from the starting coordinates to the target coordinates the program should print a warning message to the user.
+
+ZOOM floor plans are given as text files. The first line of the text file gives the dimensions of the floor plan. The remaining lines of the file contain the floor plan, using '#' to mark the location of a wall and '.' to mark the location of open floor space.
+ZOOM floor plans represent buildings in lockdown; windows and doors are marked exactly like walls since they are closed and impenetrable by zombies.
+
+ZOOM has only encountered zombies that travel in cardinal directions. ZOOM would like your program to assume zombies cannot travel diagonally.
+
+Global varialbes:
+
+    WALL="#"
+    OPEN="."
+
+Functions you use within the recursive algorithm:
+
+    readLoc(map,x,y) - Returns the symbol to location x,y in the 2D list
+    map.
+
+    setLoc(map,x,y,sym) - Sets the symbol at location x,y in the 2D list
+    map to sym.
+
+
+Write the recursive function zombieSearch()
+    
+    zombieSearch returns true if there is a path from the initial zombie
+    position to the target.
+
+    recursive algorithm:
+
+                       |  true                      if zpos is target
+                       |  false                     if zpos is wall
+                       |  false                     if zpos is been there
+    f(z_pos, target) = |  { mark position;          if zpos is open
+                       |    f(move right, target);
+                       |    f(move left,  target);
+                       |    f(move up,    target);
+                       |    f(move down,  target);
+                       |  }
+
+
+Movement using cardinal locations:
+
+    move right -> (x+1,y)
+    move left  -> (x-1,y)
+    move up    -> (x,y-1)
+    move down  -> (x,y+1)
+
+
+Running the program:
+
+    python3 zombie_reach.py building1.map zombiex, zombiey, targetx,targety
+
+    Where zombiex,zombiey is the starting position of the zombie and
+    targetx and target y is any other open position on the map.
+
+    Should either position lie off the map or in a wall, an error
+    message is printed and the program exits.

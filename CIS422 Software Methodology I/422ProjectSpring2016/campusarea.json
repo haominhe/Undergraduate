@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Name": "Eugene Campus Area", "description": null, "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": -1, "visibility": -1, "drawOrder": null, "icon": null }, "geometry": { "type": "Polygon", "coordinates": [[[-123.085155,44.049596],[-123.077344,44.049534],[-123.070778,44.04975],[-123.067259,44.04938],[-123.065457,44.048825],[-123.064727,44.048485],[-123.065457,44.047005],[-123.063097,44.046881],[-123.060822,44.045555],[-123.060736,44.043118],[-123.065242,44.04281],[-123.065328,44.040712],[-123.068461,44.040681],[-123.068375,44.03883],[-123.080863,44.038953],[-123.085327,44.047838],[-123.085155,44.049596]]] } }
+]
+}
+

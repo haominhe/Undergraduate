@@ -1,0 +1,17 @@
+#
+# Same appointments as day_in_life.ag, but scrambled in time
+# (so we should get the same results out of normalization if 
+#  appointments are sorted correctly)
+# Also, some of the lyrics are wrong ... my memory is not that good
+# 
+2013.11.26 17:00  18:30 | he blew his mind out in a car
+2013.11.26 09:00 10:30 | got up
+2013.11.26 11:00 12:30 | drug a comb across my head
+2013.11.26 12:00 13:30 | on the way down stairs I had a smoke
+2013.11.26 21:00 22:30 | they'd seen his face before
+2013.11.26 18:00  19:30 | hadn't noticed that the lights had changed
+2013.11.26 19:00  20:30 | a crowd of people stood and stared
+2013.11.26 13:00 14:30 | and somebody spoke
+2013.11.26 10:00 11:30 | got out of bed
+2013.11.26 14:00 15:30 | and I went into a dream
+2013.11.26 22:00 23:00 | nobody was really sure ... 

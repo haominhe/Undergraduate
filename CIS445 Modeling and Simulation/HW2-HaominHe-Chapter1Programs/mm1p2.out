@@ -1,0 +1,171 @@
+Two-servers queueing system
+
+Mean interarrival time      1.000 minutes
+
+Server 1 Mean service time           0.700 minutes
+
+Server 2 Mean service time           0.900 minutes
+
+Number of customers          1000
+
+Run the two-servers queueing simulation ten times
+
+ ------------------------------Run number:0 
+
+
+Average delay in queue      2.992 minutes
+
+Average number in queue     1.593
+
+Server utilization          1.673
+
+Time simulation ended    1005.659 minutes
+
+Average number in transit       1.985 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:1 
+
+
+Average delay in queue      2.907 minutes
+
+Average number in queue     1.521
+
+Server utilization          1.710
+
+Time simulation ended     976.038 minutes
+
+Average number in transit       4.090 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:2 
+
+
+Average delay in queue      3.261 minutes
+
+Average number in queue     1.883
+
+Server utilization          1.713
+
+Time simulation ended     969.060 minutes
+
+Average number in transit       6.179 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:3 
+
+
+Average delay in queue      2.819 minutes
+
+Average number in queue     1.441
+
+Server utilization          1.713
+
+Time simulation ended     992.308 minutes
+
+Average number in transit       8.046 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:4 
+
+
+Average delay in queue      2.551 minutes
+
+Average number in queue     1.200
+
+Server utilization          1.689
+
+Time simulation ended    1010.223 minutes
+
+Average number in transit       9.879 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:5 
+
+
+Average delay in queue      2.388 minutes
+
+Average number in queue     1.055
+
+Server utilization          1.639
+
+Time simulation ended    1036.805 minutes
+
+Average number in transit      11.551 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:6 
+
+
+Average delay in queue      3.077 minutes
+
+Average number in queue     1.652
+
+Server utilization          1.726
+
+Time simulation ended     976.037 minutes
+
+Average number in transit      14.315 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:7 
+
+
+Average delay in queue      2.379 minutes
+
+Average number in queue     1.087
+
+Server utilization          1.646
+
+Time simulation ended    1040.478 minutes
+
+Average number in transit      15.347 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:8 
+
+
+Average delay in queue      2.478 minutes
+
+Average number in queue     1.132
+
+Server utilization          1.660
+
+Time simulation ended    1037.636 minutes
+
+Average number in transit      17.312 
+
+Maximum number in transit        2.000 
+
+
+ ------------------------------Run number:9 
+
+
+Average delay in queue      2.595 minutes
+
+Average number in queue     1.331
+
+Server utilization          1.654
+
+Time simulation ended     988.505 minutes
+
+Average number in transit      20.192 
+
+Maximum number in transit        2.000 
+

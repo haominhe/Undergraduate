@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>SafeRide!</title>
+
+  <!-- 'viewport' is used by bootstrap to respond to device size -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Javascript:  JQuery from a content distribution network (CDN) -->
+  <script
+     src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+  </script>
+
+  <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+  <link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+</script>
+
+   <!-- Our own style sheet -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/memos.css') }}" />
+
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="icon" href="/images/favicon.ico?" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='apple-touch-icon-57x57.png')}}">
+<link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='apple-touch-icon-60x60.png')}}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='apple-touch-icon-72x72.png')}}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='apple-touch-icon-76x76.png')}}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='apple-touch-icon-114x114.png')}}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='apple-touch-icon-120x120.png')}}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-touch-icon-144x144.png')}}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-touch-icon-152x152.png')}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon-180x180.png')}}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png')}}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='android-chrome-192x192.png')}}" sizes="192x192">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-96x96.png')}}" sizes="96x96">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-16x16.png')}}" sizes="16x16">
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json')}}">
+<link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg')}}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="{{ url_for('static', filename='mstile-144x144.png')}}">
+<meta name="theme-color" content="#ffffff">
+
+
+</head>
+<body>
+<div class="container">
+
+<img src="static/saferide_banner.png" class="img-responsive">
+<b>
+
+<ul class="nav nav-tabs">
+  <li><a href="dispatch">Home</a></li>
+  <li><a href="testd">Delete All</a></li>
+  <li><a href="dispatchnew">Insert New Entry</a></li>
+  <li><a href="dhistory">History</a></li>
+  <li><a href="dtallies">Tallies</a></li>
+  <li class="active"><a href="#">Editing</a></li>
+</ul></b>
+
+<table class="table table-striped">
+  <tr><td class="td.a">
+    <div class="col-md-11"><p class="h3">
+Edit Rider Information: </p></div></td></tr></table>
+{% if session.memos %}
+  {% for memo in session.memos %}
+  {% if memo.history == "editing" %}
+<script>$.get('/_modify_db', {the_id: "{{memo.my_id}}", the_field: "history",new_stuff: "old"});</script>
+
+
+<form action="savechanges" method="post">
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Full name: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="name" value={{memo.name|decryptMe}} />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Phone Number: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" name="phone" value={{memo.phone|decryptMe}} />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>UOID: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' class="form-control" name="uoid" value={{memo.uoid|decryptMe}} />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Riders: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="riders" value={{memo.riders}} />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Pick-up Time: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="time" value={{memo.time}} />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Bicycle Request: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="bike" value={{memo.bike}} />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Pick-up Location: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="pickup" value="{{memo.pickup}}" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Dropoff Location: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="dropoff" value="{{memo.dropoff}}" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <p>Comments: </p>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name="comments" value={{memo.comments|decryptMe}} />
+  </div>
+</div>
+
+
+
+<form action="{{ url_for('savechanges') }}" method=post>
+<input type="hidden" class="form-control" name="my_id" value="{{ memo.my_id }}" />
+<input type="submit"value="Save Changes"/>
+</form>
+ 
+  
+  {% endif %}
+  {% endfor %}
+{% else %}
+  <p>No riders for you. </p>  
+{% endif %}
+
+
+
+
+</div> <!-- container -->
+
+
+
+
+</body>
+
+<script type="text/javascript">
+
+ 
+
+</script>
+
+
+</html>

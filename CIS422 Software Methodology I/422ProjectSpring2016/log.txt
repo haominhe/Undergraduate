@@ -1,0 +1,1095 @@
+OPENING DISPATCH PAGE
+OPENING DEDIT PAGE
+OPENING DEDIT PAGE
+OPENING DEDIT PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+format_address():   Formatted 1230 Bristol Street, Eugene, OR, United States --> 1230 Bristol St, Eugene, OR 97403, USA
+format_address():   Formatted Deady Hall, Eugene, OR, United States --> Deady Hall, Eugene, OR 97401, USA
+format_address():   Formatted 1230 Bristol Street, Eugene, OR, United States --> 1230 Bristol St, Eugene, OR 97403, USA
+check_address_campus():   1230 Bristol Street, Eugene, OR, United States is not in boundaries
+check_address():   1230 Bristol Street, Eugene, OR, United States
+format_address():   Formatted 1230 Bristol Street, Eugene, OR, United States --> 1230 Bristol St, Eugene, OR 97403, USA
+check_address():   location = Bristol Street, Glenwood, Eugene, Lane County, Oregon, 97403, United States of America
+check_address():   1230 Bristol Street, Eugene, OR, United States is in boundaries
+check_address():   Deady Hall, Eugene, OR, United States
+format_address():   Formatted Deady Hall, Eugene, OR, United States --> Deady Hall, Eugene, OR 97401, USA
+check_address():   location = Deady Hall, East 11th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   Deady Hall, Eugene, OR, United States is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING REQUEST PAGE
+format_address():   Formatted 1230 Bristol Street, Eugene, OR, United States --> 1230 Bristol St, Eugene, OR 97403, USA
+format_address():   Formatted Irving Rd --> Irving Rd, Eugene, OR, USA
+format_address():   Formatted 1230 Bristol Street, Eugene, OR, United States --> 1230 Bristol St, Eugene, OR 97403, USA
+check_address_campus():   1230 Bristol Street, Eugene, OR, United States is not in boundaries
+check_address():   1230 Bristol Street, Eugene, OR, United States
+format_address():   Formatted 1230 Bristol Street, Eugene, OR, United States --> 1230 Bristol St, Eugene, OR 97403, USA
+check_address():   location = Bristol Street, Glenwood, Eugene, Lane County, Oregon, 97403, United States of America
+check_address():   1230 Bristol Street, Eugene, OR, United States is in boundaries
+check_address():   Irving Rd
+format_address():   Formatted Irving Rd --> Irving Rd, Eugene, OR, USA
+check_address():   location = Irving Road, Irving, Eugene, Lane County, Oregon, 97402, United States of America
+check_address():   Irving Rd is not in boundaries
+OPENING OUT_OF_BOUNDS PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Could not format Where shall I drop you off
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue,  --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue, 
+format_address():   Formatted 112 East 13th Avenue,  --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue,  is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING REQUEST PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 east 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 east 13th Avenue
+format_address():   Formatted 112 east 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 east 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue,
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue,
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue,
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+format_address():   Could not format Where shall I pick you up
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING REQUEST PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue,
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 13th Avenue, Seattle, WA, United States --> 112 13th Ave, Seattle, WA 98122, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 13th Avenue, Seattle, WA, United States
+format_address():   Formatted 112 13th Avenue, Seattle, WA, United States --> 112 13th Ave, Seattle, WA 98122, USA
+check_address():   location = 112, 13th Avenue, Yesler Terrace, Seattle, King County, Washington, 98122, United States of America
+check_address():   112 13th Avenue, Seattle, WA, United States is not in boundaries
+OPENING OUT_OF_BOUNDS PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue,
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue is not in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue,
+format_address():   Formatted 112 East 13th Avenue, --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, is in boundaries
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address_campus():   112 East 13th Avenue, Eugene, OR, United States is not in boundaries
+check_address():   112 East 13th Avenue, Eugene, OR, United States
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue, Eugene, OR, United States is in boundaries
+check_address():   112 East 13th Avenue
+format_address():   Formatted 112 East 13th Avenue --> 112 E 13th Ave, Eugene, OR 97401, USA
+check_address():   location = 112, East 13th Avenue, College Hill, Eugene, Lane County, Oregon, 97401, United States of America
+check_address():   112 East 13th Avenue is in boundaries
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 East 13th Avenue, Eugene, OR, United States --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    112 East 13th Avenue has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING INDEX PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCHNEW PAGE
+format_address():   Could not format Where shall I pick you up
+format_address():   Could not format Where shall I drop you off
+dcreate2():    Where shall I pick you up cannot geolocate
+dcreate2():    Where shall I drop you off cannot geolocate
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING REQUEST PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Could not format Where shall I pick you up
+format_address():   Could not format Where shall I drop you off
+create2():    Where shall I pick you up cannot geolocate
+create2():    Where shall I drop you off cannot geolocate
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCHNEW PAGE
+format_address():   Formatted 1180 willamette --> 1180 Willamette St, Eugene, OR 97401, USA
+format_address():   Formatted 1180 willamette --> 1180 Willamette St, Eugene, OR 97401, USA
+dcreate2():    1180 willamette has coordinates [44.0469047776327, -123.092858777201]
+dcreate2():    1180 willamette has coordinates [44.0469047776327, -123.092858777201]
+OPENING DISPATCH PAGE
+OPENING DISPATCHNEW PAGE
+OPENING DISPATCH PAGE
+OPENING DEDIT PAGE
+OPENING DISPATCH PAGE
+OPENING DEDIT PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+savechanges():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+savechanges():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCHNEW PAGE
+format_address():   Formatted 1180 willamette --> 1180 Willamette St, Eugene, OR 97401, USA
+format_address():   Formatted 1180 willamette --> 1180 Willamette St, Eugene, OR 97401, USA
+dcreate2():    1180 willamette has coordinates [44.0469047776327, -123.092858777201]
+dcreate2():    1180 willamette has coordinates [44.0469047776327, -123.092858777201]
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCHNEW PAGE
+format_address():   Formatted 1180 willamette --> 1180 Willamette St, Eugene, OR 97401, USA
+format_address():   Formatted 1180 willamette --> 1180 Willamette St, Eugene, OR 97401, USA
+dcreate2():    1180 willamette has coordinates [44.0469047776327, -123.092858777201]
+dcreate2():    1180 willamette has coordinates [44.0469047776327, -123.092858777201]
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+format_address():   Formatted 112 e 13th st. --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th st --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th st. has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th st has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+create2():    About to put_memo
+OPENING ENTRY_CONFIRMED PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCHNEW PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+dcreate2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+dcreate2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+dcreate2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+dcreate2():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+OPENING DISPATCH PAGE
+OPENING DEDIT PAGE
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+format_address():   Formatted 112 e 13th ave --> 112 E 13th Ave, Eugene, OR 97401, USA
+savechanges():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+savechanges():    112 e 13th ave has coordinates [44.045436, -123.09093875]
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DHISTORY PAGE
+OPENING DISPATCH PAGE
+OPENING DHISTORY PAGE
+OPENING DHISTORY PAGE
+OPENING DHISTORY PAGE
+OPENING DHISTORY PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DHISTORY PAGE
+OPENING DISPATCH PAGE
+OPENING DHISTORY PAGE
+OPENING DISPATCHNEW PAGE
+format_address():   Could not format Where shall I pick you up
+format_address():   Could not format Where shall I drop you off
+dcreate2():    Where shall I pick you up cannot geolocate
+dcreate2():    Where shall I drop you off cannot geolocate
+OPENING DISPATCH PAGE
+OPENING DEDIT PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING REQUEST PAGE
+OPENING INDEX PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING REQUEST PAGE
+OPENING DISPATCH PAGE
+OPENING OUT_OF_BOUNDS PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE
+OPENING INDEX PAGE
+OPENING DISPATCH PAGE
+OPENING DISPATCH PAGE

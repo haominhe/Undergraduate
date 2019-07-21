@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html> <head>
+<title>Ride Denied!</title>
+
+  <!-- 'viewport' is used by bootstrap to respond to device size -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Javascript:  JQuery from a content distribution network (CDN) -->
+  <script
+     src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+  </script>
+
+  <!-- Bootstrap includes javascript and css  (must follow jquery) -->
+  <link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+   <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+   </script>
+
+  <!-- Leaflet:  includes javascript and css -->
+  <link rel="stylesheet" href="static/leaflet.css" />
+  <script src="static/leaflet.js"></script>
+
+   <!-- Our own style sheet -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/memos.css') }}" />
+
+  <!-- Saferide boundary json file -->
+  <script type="text/javascript" href="saferide.json"></script>
+
+
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="icon" href="/images/favicon.ico?" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='apple-touch-icon-57x57.png')}}">
+<link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='apple-touch-icon-60x60.png')}}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='apple-touch-icon-72x72.png')}}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='apple-touch-icon-76x76.png')}}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='apple-touch-icon-114x114.png')}}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='apple-touch-icon-120x120.png')}}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='apple-touch-icon-144x144.png')}}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='apple-touch-icon-152x152.png')}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon-180x180.png')}}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-32x32.png')}}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='android-chrome-192x192.png')}}" sizes="192x192">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-96x96.png')}}" sizes="96x96">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon-16x16.png')}}" sizes="16x16">
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json')}}">
+<link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg')}}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="{{ url_for('static', filename='mstile-144x144.png')}}">
+<meta name="theme-color" content="#ffffff">
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="static/saferide_banner.png" class="img-responsive">
+<h1>Out of bounds</h1>
+<p align="center" style="font-family: Verdana;">
+The following address(es) you submitted is out of the bounds of our service: </br>
+
+{% if session.pbounds == False %}
+{{session.showpickup}} </br>
+{% endif %}
+
+{% if session.dbounds == False %}
+{{session.showdropoff}} </br>
+{% endif %}
+
+Please make another request with a different location, or call at 541-346-7433 during operation hours. </br>
+Thank you for using SafeRide. Have a good night! </br>
+<a href="{{ url_for('index') }}"><button  class="btn btn-primary">Return Home</button></a></br>
+Here is a map of our boundaries:
+</p>
+
+
+<!--
+<iframe width='100%' height='600px' frameBorder='0' src=
+'https://a.tiles.mapbox.com/v4/davidzimmerly.nomgk2l5/attribution,zoompan,zoomwheel,geocoder.html?access_token=pk.eyJ1IjoiZGF2aWR6aW1tZXJseSIsImEiOiJjaWZ6dnF0cWQ2NWNjdTVrcTl5MGQ3MTlsIn0.al5p6-4MP-NkK3hM8o3Tkw'
+></iframe>
+'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2aWR6aW1tZXJseSIsImEiOiJjaWZ6dnF0cWQ2NWNjdTVrcTl5MGQ3MTlsIn0.al5p6-4MP-NkK3hM8o3Tkw'
+-->
+</div>
+
+<div id="mapid" style="width: 100%; height: 600px"></div>
+
+<script>
+  var mymap = L.map('mapid').setView([44.045, -123.075], 12);
+
+
+L.tileLayer(
+'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2aWR6aW1tZXJseSIsImEiOiJjaWZ6dnF0cWQ2NWNjdTVrcTl5MGQ3MTlsIn0.al5p6-4MP-NkK3hM8o3Tkw'
+, {
+    maxZoom: 18,
+    attribution: 'SafeRide Boundaries',
+    id: 'mapbox.streets'
+}).addTo(mymap);
+
+  var boundaries = L.polygon([
+[44.0776585, -123.1002188], [44.0701663, -123.1005192], [44.0701971, -123.10433860000002], [44.0709988, -123.1060553], [44.0712146, -123.11236379999998], [44.0639374, -123.1124496], [44.0639991, -123.11729910000001], [44.0570603, -123.11738490000002], [44.0555491, -123.11845780000002], [44.0521255, -123.11845780000002], [44.0522181, -123.12279220000002], [44.0478381, -123.122921], [44.047869, -123.12785630000002], [44.0308088, -123.1278133], [44.0302225, -123.12824250000001], [44.0296671, -123.1299591], [44.0296671, -123.1315899], [44.0293895, -123.1321478], [44.0296054, -123.13257690000002], [44.0296054, -123.13399310000001], [44.0292969, -123.134594], [44.0286798, -123.13485150000001], [44.0284638, -123.13395019999999], [44.0289266, -123.13150409999999], [44.0285563, -123.12626839999999], [44.0273221, -123.1246376], [44.0270752, -123.1178999], [44.0236809, -123.1178999], [44.021922, -123.1172132], [44.0210888, -123.1171703], [44.0201938, -123.117857], [44.0149165, -123.1179428], [44.0148085, -123.11496019999998], [44.0157652, -123.107686], [44.0176787, -123.1075788], [44.0177867, -123.09257980000001], [44.0114289, -123.0926657], [44.0113209, -123.082602], [44.0113671, -123.0749846], [44.0121079, -123.07438369999998], [44.0122314, -123.0734396], [44.0130647, -123.0723238], [44.014361, -123.0724096], [44.0147313, -123.07180880000001], [44.0169226, -123.07262420000002], [44.0216442, -123.072753], [44.0216134, -123.072238], [44.0241129, -123.0721951], [44.0240821, -123.0628395], [44.0286181, -123.05979250000001], [44.0288649, -123.060565], [44.030346, -123.06086540000001], [44.0311482, -123.0598783], [44.0311173, -123.0561018], [44.0285563, -123.056016], [44.0284329, -123.0542564], [44.0290809, -123.05206779999999], [44.031179, -123.0519819], [44.031179, -123.0505657], [44.0412059, -123.05005070000001], [44.0633515, -123.04897790000001], [44.0696113, -123.0482054], [44.0698271, -123.04498669999998], [44.0706905, -123.04215430000002], [44.0768569, -123.0421114], [44.0768877, -123.0475187], [44.0696729, -123.04842], [44.0697963, -123.051939], [44.0695804, -123.0639982], [44.0691796, -123.0652857], [44.0697346, -123.06957720000001], [44.0774735, -123.0694485]
+ ]).addTo(mymap);
+
+  {% if session.platlong and session.dlatlong %}
+  mymap.fitBounds( [ {{session.platlong}}, {{session.dlatlong}} ] );
+  {% endif %}
+
+  {% if session.platlong %}
+  var pickup = L.marker( {{session.platlong}} ).addTo(mymap);
+  pickup.bindPopup( "{{ session.showpickup }}" ).openPopup();
+  {% endif %}
+
+  {% if session.dlatlong %}
+  var dropoff = L.marker( {{session.dlatlong}} ).addTo(mymap);
+  dropoff.bindPopup( "{{ session.showdropoff }}" );
+  {% endif %}
+
+
+</script>
+
+
+</body>
+</html>

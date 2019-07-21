@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- rollSingular.html                                        Haomin He -->
+<!-- This page simulates dice rolls until doubles are obtained. -->
+<!-- ========================================================== -->
+ 
+<html>
+ <head>
+   <title> Dice Roller </title>
+   <script type="text/javascript" src="../js/random.js">
+   </script>
+   <script type="text/javascript">
+     function RollUntilDoubles()
+     // Assumes: outputDiv is available for output
+     // Results: rolls and displays dice until doubles are obtained
+     {
+       var roll1, roll2, rollCount = 0, rollSingular;
+       
+       
+       roll1 = RandomInt(1, 6);            		// ROLL AND DISPLAY DICE
+       roll2 = RandomInt(1, 6);
+       ++rollCount;
+       document.getElementById('outputDiv').innerHTML= 'You rolled: ' + roll1+' '+roll2+'<br >';
+    
+       while (roll1 != roll2) {                	// WHILE NOT DOUBLES,
+         roll1 = RandomInt(1, 6);              	// ROLL AGAIN AND DISPLAY AT
+         roll2 = RandomInt(1, 6);				// THE END OF THE PAGE DIVISION
+         ++rollCount;
+         document.getElementById('outputDiv').innerHTML = 
+           document.getElementById('outputDiv').innerHTML + 'You rolled: ' + roll1+' '+roll2+'<br>';
+       }
+       
+       rollSingular = ((rollCount > 1)?'ROLLS':'ROLL');
+       
+       document.getElementById('outputDiv').innerHTML = 
+         document.getElementById('outputDiv').innerHTML + '<br >' + 'DOUBLES IN ' + rollCount + ' ' + rollSingular + '!';
+     }
+   </script>
+ </head>
+
+ <body>
+   <h2>Roll Stats Text</h2>
+   <input type="button" value="Roll until doubles" onclick="RollUntilDoubles();">
+   <hr>
+   <div id="outputDiv">&nbsp;</div>
+   <div id="rollCount">&nbsp;</div>
+ </body>
+</html>

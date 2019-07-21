@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- quotes.html                                             Haomin He -->
+<!-- Web page that displays quotes message when a button is clicked. -->
+<!-- =============================================================== -->
+
+<html>
+ <head>
+   <title>  Favorite Quotations  </title>
+ </head>
+
+ <body style='text-align:center'>
+   <p>
+     <big><b>Favorite Quotations</b></big>
+   </p>
+   <input type="button" value="Leonardo Da Vinci "
+          onclick="document.getElementById('outputDiv').innerHTML=
+                     'My body will not be a tomb for other creatures. ' +
+                     '-- <i>Leonardo Da Vinci</i>';">
+   <input type="button" value=" Bruce Lee "
+          onclick="document.getElementById('outputDiv').innerHTML=
+                     'Adapt what is useful, reject what is useless, and add what is specifically your own. ' +
+                     '-- <i> Bruce Lee</i>';">
+    <input type="button" value="Jay-Z "
+          onclick="document.getElementById('outputDiv').innerHTML=
+                     'I call a spade a spade, it just is what it is. ' +
+                     '-- <i>Jay-Z</i>';">
+                     
+   <hr>
+   <div id="outputDiv" onclick = "this.style='color:red';">
+     Welcome to my site!
+   </div>
+ </body>
+</html>

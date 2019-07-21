@@ -1,0 +1,7 @@
+CIS 330 Winter 2016 Team Project
+Haomin He, Guangyun Hou, Yanting Liu
+2016/2/23
+
+Had meeting and discussion last Friday: 
+Splitting coding parts, and working on our own tasks.
+Learning SDL and setting it up. 
