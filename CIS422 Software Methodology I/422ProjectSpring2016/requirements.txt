@@ -1,6 +1,6 @@
 arrow==0.7.0
 crypto==1.4.1
-Flask==0.12.3
+Flask==1.0.0
 Flask-SSLify==0.1.5
 geopy==1.11.0
 gunicorn==19.5.0
