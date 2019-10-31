@@ -17,6 +17,6 @@ requests==2.20.0
 Shapely==1.5.15
 shellescape==3.4.1
 six==1.10.0
-Werkzeug==0.11.9
+Werkzeug==0.15.3
 Flask-Environments==0.1
 twilio==5.4.0
