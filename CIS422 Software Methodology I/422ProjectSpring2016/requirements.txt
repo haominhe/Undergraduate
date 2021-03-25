@@ -12,7 +12,7 @@ passlib==1.6.5
 pycrypto==2.6.1
 pymongo==3.2.2
 python-dateutil==2.5.3
-PyYAML==4.2b1
+PyYAML==5.4
 requests==2.20.0
 Shapely==1.5.15
 shellescape==3.4.1
